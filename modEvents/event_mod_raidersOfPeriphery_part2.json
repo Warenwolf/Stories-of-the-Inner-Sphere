@@ -1,0 +1,305 @@
+{
+    "Description" : {
+        "Id" : "event_mod_raidersOfPeriphery_part2",
+        "Name" : "Periphery settlement raid, Part II",
+        "Details" : "The staccato rhythm of gunfire echoed off the walls, each shot a reminder of the peril we faced. Despite the chaos, our training kicked in, and we fought calmly, aiming to neutralize the threats while minimizing risks.\r\n\r\n\"Commander, incoming 'Mech!\" [[TGT_MW,{TGT_MW.Callsign}]]'s urgent voice pierced through the clamor. I take a look, spotting the silhouette of a Locust 'Mech, its weaponry raining machine gun fire upon us. This changes everything.\r\n\r\n\"We move, now!\" I yell as 12.7 mm bullets tear through the walls.",
+        "Icon" : "uixTxrSpot_FightinTheSettlement.png"
+    },
+    "Scope" : "Company",
+    "Weight" : 10,
+    "Requirements" : {
+        "Scope" : "Company",
+        "RequirementTags" : {
+            "tagSetSourceFile" : "",
+            "items" : []
+        },
+        "ExclusionTags" : {
+            "tagSetSourceFile" : "",
+            "items" : []
+        },
+        "RequirementComparisons" : []
+    },
+    "AdditionalRequirements" : [
+        {
+            "Scope" : "MechWarrior",
+            "RequirementTags" : {
+                "tagSetSourceFile" : "",
+                "items" : [
+                    "eventRaiderPeriphery01"
+                ]
+            },
+            "ExclusionTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "RequirementComparisons" : []
+        }
+    ],
+    "AdditionalObjects" : [
+        {
+            "Scope" : "SecondaryMechWarrior",
+            "Requirements" : {
+                "Scope" : "SecondaryMechWarrior",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : [
+                        "eventRaiderPeriphery02"
+                    ]
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        }
+    ],
+    "Options" : [
+        {
+            "Description" : {
+                "Id" : "outcome_0",
+                "Name" : "Retreat!",
+                "Details" : "Retreat",
+                "Icon" : null
+            },
+            "RequirementList" : [
+                {
+                    "Scope" : "Commander",
+                    "RequirementTags" : {
+                        "tagSetSourceFile" : "",
+                        "items" : []
+                    },
+                    "ExclusionTags" : {
+                        "tagSetSourceFile" : "",
+                        "items" : [
+                            "Event_Commander_Wounded01"
+                        ]
+                    },
+                    "RequirementComparisons" : []
+                }
+            ],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_0",
+                        "Name" : "Wounded",
+                        "Details" : "With bullets whizzing past, we make a desperate dash towards the back of the building, seeking refuge on the other side. I spot a balcony leading to the neighboring building and, in desperation, signal to the others to follow despite the high risk. \r\n\r\nAs you exit to the balcony, a raider catches sight of your escape and unleashes a barrage of bullets. [[SCN_MW,{SCN_MW.Callsign}]] takes several hits, collapsing in agony.\r\n\r\n\r\n\"We're exposed!\" [[TGT_MW,{TGT_MW.Callsign}]]'s voice rings out, strained with urgency, as you return fire and the two of you drag our wounded comrade back inside to safety. \r\n\r\n\r\nThe relentless onslaught of bullets keeps the three of you pinned down, your options dwindling with each passing moment.\r\n\r\nAnd now the heavy steps of Locust 'Mech coming around can be heard..",
+                        "Icon" : null
+                    },
+                    "Weight" : 25,
+                    "Results" : [
+                        {
+                            "Scope" : "SecondaryMechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "MechWarrior_AddInjuries",
+                                    "value" : "2",
+                                    "valueConstant" : null,
+                                    "additionalValues" : null
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart3"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart2"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "MechWarrior_SetTimeout",
+                                    "value" : "8",
+                                    "valueConstant" : null,
+                                    "additionalValues" : null
+                                },
+                                {
+                                    "Type" : "System_StartConversation",
+                                    "value" : "9ced6a2761b78ddd79d139ab",
+                                    "valueConstant" : null,
+                                    "additionalValues" : [
+                                        null,
+                                        null,
+                                        "Ship",
+                                        null
+                                    ]
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                },
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_1",
+                        "Name" : "Unhurt",
+                        "Details" : "With bullets whizzing past, we make a desperate dash towards the back of the building, seeking refuge on the other side. \r\n\r\n\r\nYou spot a balcony leading to the neighboring building and, in desperation, signal to the others to follow despite the high risk. \r\n\r\nAs you exit to the balcony, a raider catches sight of your escape attempt and unleashes a barrage of bullets.\n\r\n\n\r\n\"We're exposed!\" [[TGT_MW,{TGT_MW.Callsign}]]'s voice rings out, strained with urgency. \r\n\r\n\r\nThree of you return fire and retreat back inside, realizing the relentless onslaught of bullets has you pinned down, your options dwindling with each passing moment. And now the heavy steps of Locust 'Mech coming around can be heard..",
+                        "Icon" : null
+                    },
+                    "Weight" : 75,
+                    "Results" : [
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart3"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart2"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "System_StartConversation",
+                                    "value" : "9ced6a2761b78ddd79d139ab",
+                                    "valueConstant" : null,
+                                    "additionalValues" : [
+                                        null,
+                                        null,
+                                        "Ship",
+                                        null
+                                    ]
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        },
+        {
+            "Description" : {
+                "Id" : "outcome_1",
+                "Name" : "Retreat (wounded)",
+                "Details" : "Retreat while wounded",
+                "Icon" : null
+            },
+            "RequirementList" : [
+                {
+                    "Scope" : "Commander",
+                    "RequirementTags" : {
+                        "tagSetSourceFile" : "",
+                        "items" : [
+                            "Event_Commander_Wounded01"
+                        ]
+                    },
+                    "ExclusionTags" : {
+                        "tagSetSourceFile" : "",
+                        "items" : []
+                    },
+                    "RequirementComparisons" : []
+                }
+            ],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_1_0",
+                        "Name" : "Woounded1",
+                        "Details" : "Ignoring the searing pain radiating through your injured arm, you run with two others to the other side of the building. \r\n\r\nYou see that the balcony leads to the neighboring building and, in desperation, signal to the others to follow you despite the high risk. \r\n\r\nAs the three of you exit to the balcony, a raider catches sight of your escape attempt and unleashes a barrage of bullets.\r\n\r\n\r\n\"We're exposed!\" [[TGT_MW,{TGT_MW.Callsign}]]'s voice rings out, strained with urgency. \r\n\r\n\r\nThe three of you return fire and retreat back inside, realizing the relentless onslaught of bullets has you pinned down, your options dwindling with each passing moment.\r\n\r\nAnd now the heavy steps of Locust 'Mech coming around can be heard..",
+                        "Icon" : null
+                    },
+                    "Weight" : 100,
+                    "Results" : [
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart3"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart2"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "System_StartConversation",
+                                    "value" : "9ced6a2761b78ddd79d139ab",
+                                    "valueConstant" : null,
+                                    "additionalValues" : [
+                                        null,
+                                        null,
+                                        "Ship",
+                                        null
+                                    ]
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        }
+    ],
+    "PublishState" : "PUBLISHED",
+    "ValidationState" : "UNTESTED",
+    "EventType" : "UNSELECTABLE",
+    "OneTimeEvent" : true,
+    "Tags" : {
+        "tagSetSourceFile" : "tags/EventTags",
+        "items" : []
+    }
+}

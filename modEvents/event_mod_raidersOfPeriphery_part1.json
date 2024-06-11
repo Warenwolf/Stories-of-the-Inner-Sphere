@@ -1,0 +1,395 @@
+{
+    "Description" : {
+        "Id" : "event_mod_raidersOfPeriphery_part1",
+        "Name" : "Periphery settlement raid",
+        "Details" : "I crouched behind a weather-beaten supply shack in a small periphery settlement on on {TGT_SYSTEM.Name}, flanked by [[TGT_MW,{TGT_MW.Callsign}]] and [[SCN_MW,{SCN_MW.Callsign}]]. We were on a routine resupply mission when the sudden, thunderous roar of raider shuttles filled the sky and the coms went down.\r\n\r\n\"Looks like our resupply just got complicated,\" I muttered, peeking around the corner. I could see the raiders disembarking from their shuttles at the edge of the settlement, forming a loose perimeter. The distinct crack of small arms fire echoed through the settlement as panicked civilians ran for cover.\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] checked {TGT_MW.Det} sidearm, a worn but reliable slug thrower. \"Commander, we're outgunned and outnumbered. We need to make a call.\"\r\n\r\n[[SCN_MW,{SCN_MW.Callsign}]] nodded, {SCN_MW.Det} eyes scanning the area. \"We can either try wait out the raiders, holing up in a secure defensive position or make a break for the Leopard and get back to the Argo - provided they haven't been discovered by raiders first. What's the play?\"\r\n\r\n\r\nI considered our options. We were professional mechswarriors but infantry tactics were another matter and there was only three of us.\r\n\r\nOn other hand raiders were probably not trained infantrymen either and certainly not used to a stand up fight - and the Leopard may not be there if Sumire has been forced to lift off due to fighting.",
+        "Icon" : "uixTxrSpot_RuralTown.png"
+    },
+    "Scope" : "Company",
+    "Weight" : 9999,
+    "Requirements" : {
+        "Scope" : "Company",
+        "RequirementTags" : {
+            "tagSetSourceFile" : "Tags/CompanyTags",
+            "items" : []
+        },
+        "ExclusionTags" : {
+            "tagSetSourceFile" : "",
+            "items" : []
+        },
+        "RequirementComparisons" : [
+            {
+                "obj" : "Travel",
+                "op" : "Equal",
+                "val" : 0,
+                "valueConstant" : "0"
+            }
+        ]
+    },
+    "AdditionalRequirements" : [
+        {
+            "Scope" : "MechWarrior",
+            "RequirementTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "ExclusionTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "RequirementComparisons" : [
+                {
+                    "obj" : "Injuries",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : "0"
+                }
+            ]
+        },
+        {
+            "Scope" : "Commander",
+            "RequirementTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "ExclusionTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "RequirementComparisons" : [
+                {
+                    "obj" : "Injuries",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : "0"
+                }
+            ]
+        },
+        {
+            "Scope" : "StarSystem",
+            "RequirementTags" : {
+                "tagSetSourceFile" : "Tags/PlanetTags",
+                "items" : [
+                    "planet_civ_periphery",
+                    "planet_pop_small"
+                ]
+            },
+            "ExclusionTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "RequirementComparisons" : []
+        }
+    ],
+    "AdditionalObjects" : [
+        {
+            "Scope" : "SecondaryMechWarrior",
+            "Requirements" : {
+                "Scope" : "SecondaryMechWarrior",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : [
+                    {
+                        "obj" : "Injuries",
+                        "op" : "Equal",
+                        "val" : 0,
+                        "valueConstant" : "0"
+                    }
+                ]
+            }
+        }
+    ],
+    "Options" : [
+        {
+            "Description" : {
+                "Id" : "outcome_0",
+                "Name" : "Engage the raiders",
+                "Details" : "Engage the raiders",
+                "Icon" : null
+            },
+            "RequirementList" : [],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_0",
+                        "Name" : "Battle1Raiders",
+                        "Details" : "\"We don't have time to disengage - let's take the fight to them,\" I decided. \"Let us find and secure a stronger position and hold them off until reinforced by either Milita or Argo sends in the 'Mechs\"\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] and [[SCN_MW,{SCN_MW.Callsign}]] nodded, their expressions resolute. The three of us moved swiftly, using the cover of buildings and debris to advance. The raiders, caught off guard by our aggressive maneuver, hesitated for a moment.\r\n\r\n\"Suppressing fire!\" [[TGT_MW,{TGT_MW.Callsign}]] barked, {TGT_MW.Det} slug thrower spitting lead. [[SCN_MW,{SCN_MW.Callsign}]] followed suit, {SCN_MW.Det} precise shots dropping two raiders before they could react.\r\n\r\nI moved up, throwing an old smoke grenade to obscure our movements that I kept all this time as part of my ejection kit. \"Push forward, keep them off balance!\"\r\n\r\n\r\n The sound of gunfire intensified as the raiders regrouped and started returning fire. A bullet whizzed past my ear, but I ignored it, focused on the task at hand.\r\n\r\n\r\n\"Take the building on the left!\" I shouted. \"We'll use it to hole up\"\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] kicked in the door, and the three of us stormed inside, securing the rooms quickly. We moved to the windows, taking up firing positions.\r\n\r\n\r\n\"Hold them busy,\" I ordered. \"We need to hold them off until Darius sends in the 'Mechs or the local milita decides to show up.\"",
+                        "Icon" : null
+                    },
+                    "Weight" : 75,
+                    "Results" : [
+                        {
+                            "Scope" : "MechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeriphery01"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "SecondaryMechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeriphery02"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart2"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "System_StartConversation",
+                                    "value" : "9ced6a2761b78ddd79d139ab",
+                                    "valueConstant" : null,
+                                    "additionalValues" : [
+                                        null,
+                                        null,
+                                        "Ship",
+                                        null
+                                    ]
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                },
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_1",
+                        "Name" : "BattleRadiers1",
+                        "Details" : "\"We don't have time to disengage - let's take the fight to them,\" I decided.\"Let us secure a stronger position and hold them off until reinforced by either Milita or Argo sends in the 'Mechs\"\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] and [[SCN_MW,{SCN_MW.Callsign}]] nodded, their expressions resolute. The three of us moved swiftly, using the cover of buildings and debris to advance. The raiders, caught off guard by our aggressive maneuver, hesitated for a moment.\r\n\r\n\"Suppressing fire!\" [[TGT_MW,{TGT_MW.Callsign}]] barked, {TGT_MW.Det} slug thrower spitting lead. [[SCN_MW,{SCN_MW.Callsign}]] followed suit, {SCN_MW.Det} precise shots dropping two raiders before they could react.\r\n\r\nI moved up, throwing an old smoke grenade to obscure our movements that I kept all this time as part of my ejection kit. It failed to work. \"Push forward, keep them off balance!\"\r\n\r\n The sound of gunfire intensified as the raiders regrouped and started returning fire. A bullet hit my arm, going through the flesh. The adrenalin kept the pain away...for now.\r\n\r\n\"Take the building on the left!\" I shouted. \"We'll hole up in there.\"\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] kicked in the door, and the three of us stormed inside, clearing the room quickly. We moved to the windows, taking up firing positions.\r\n\r\n\r\n\"Hold them busy,\" I ordered. \"We need to hold them off until Darius sends in the 'Mechs or the local milita decides to show up.\"",
+                        "Icon" : null
+                    },
+                    "Weight" : 25,
+                    "Results" : [
+                        {
+                            "Scope" : "Commander",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "Tags/CommanderTags",
+                                "items" : [
+                                    "Event_Commander_Wounded01"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "MechWarrior_AddInjury",
+                                    "value" : "1",
+                                    "valueConstant" : null,
+                                    "additionalValues" : null
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "MechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeriphery01"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "SecondaryMechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeriphery02"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart2"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "System_StartConversation",
+                                    "value" : "9ced6a2761b78ddd79d139ab",
+                                    "valueConstant" : null,
+                                    "additionalValues" : [
+                                        null,
+                                        null,
+                                        "Ship",
+                                        null
+                                    ]
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        },
+        {
+            "Description" : {
+                "Id" : "outcome_1",
+                "Name" : "Evade and Escape",
+                "Details" : "Evade and Escape",
+                "Icon" : null
+            },
+            "RequirementList" : [],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_1_0",
+                        "Name" : "RetreatRaider01",
+                        "Details" : "\"Better to avoid a direct confrontation,\" I said. \"We'll slip through and head back to the Leopard. Our priority is getting back to the Argo.\"\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] and [[SCN_MW,{SCN_MW.Callsign}]] nodded, understanding the gravity of the situation.\r\n\r\n\r\nThe three of us moved quickly, sticking to the shadows and avoiding open areas. The sound of gunfire and chaos provided the perfect cover for our movements.\r\n\r\nWe ducked into an alley, moving silently and swiftly. A raider patrol passed by, oblivious to our presence. I motioned for us to wait, holding my breath until the patrol moved on.\r\n\r\n\"Clear,\" I whispered. \"Let's move.\"\r\n\r\nWe navigated through the maze of buildings, staying low and out of sight. Every step was calculated, every decision precise. We encountered another raider, but [[SCN_MW,{SCN_MW.Callsign}]] dispatched him quietly with a well-placed knife thrust.\r\n\r\nAs we neared the edge of the settlement, we could see our Leopard in the distance. The way was clear, but we knew it wouldn't stay that way for long.\r\n\r\n\"Almost there,\" I said, urging my team forward. \"Stay sharp.\"\r\n\r\nWith one final sprint, we reached the Leopard, quickly boarding and filled in the crew on what was happening. As the drop ship lifted off, I glanced back at the settlement, the sounds of the raid fading away.\r\n\r\n\"Mission accomplished,\" I said, relief evident in my voice. \"Let's get back to the Argo.\"",
+                        "Icon" : null
+                    },
+                    "Weight" : 75,
+                    "Results" : []
+                },
+                {
+                    "Description" : {
+                        "Id" : "outcome_1_1",
+                        "Name" : "RetreatRaider02",
+                        "Details" : "\"Better to avoid a direct confrontation,\" I said.\"We'll slip through and head back to the Leopard. Our priority is getting back to the Argo.\"\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] and [[SCN_MW,{SCN_MW.Callsign}]] nodded, understanding the gravity of the situation. \r\n\r\n\r\n\r\nThe three of us moved quickly, sticking to the shadows and avoiding open areas. The sound of gunfire and chaos provided the perfect cover for our movements.\r\n\r\nWe ducked into an alley, moving silently and swiftly. A raider patrol passed by, oblivious to our presence. I motioned for us to wait, holding my breath until the patrol moved on.\r\n\r\n\"Clear,\" I whispered. \"Let's move.\"\r\n\r\nWe navigated through the maze of buildings, staying low and out of sight. Every step was calculated, every decision precise. As we turned a corner, a raider spotted us and fired. The bullet struck [[SCN_MW,{SCN_MW.Callsign}]] in the leg, and {SCN_MW.Subj} went down with a grunt of pain.\r\n\r\n\"[[SCN_MW,{SCN_MW.Callsign}]], can you move?\" I asked, dropping to {SCN_MW.Det} side.\r\n\r\n[[SCN_MW,{SCN_MW.Callsign}]] grimaced, clutching {SCN_MW.Det} leg. \"I'll manage, Commander. Just help me up.\"\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] provided cover as I helped [[SCN_MW,{SCN_MW.Callsign}]] to {SCN_MW.Det} feet. We moved more slowly now, [[SCN_MW,{SCN_MW.Callsign}]] leaning on me for support. We encountered another raider, but [[TGT_MW,{TGT_MW.Callsign}]] took her down with a quick, precise shot.\r\n\r\nAs we neared the edge of the settlement, we could see our Leopard in the distance. The way was clear, but we knew it wouldn't stay that way for long.\r\n\r\n\"Almost there,\" I said, urging my team forward. \"Stay sharp.\"\r\n\r\nWith one final push, we reached the Leopard, quickly boarding and informing the crew about what was happening. [[SCN_MW,{SCN_MW.Callsign}]] winced as {SCN_MW.Subj} settled into a seat, but {SCN_MW.Subj} was safe.\r\n\r\nAs we lifted off, I glanced back at the settlement, the sounds of the raid fading away.\r\n\r\n\"Mission accomplished,\" I said, relief evident in my voice. \"Let's get back to the Argo.\"",
+                        "Icon" : null
+                    },
+                    "Weight" : 25,
+                    "Results" : [
+                        {
+                            "Scope" : "SecondaryMechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "MechWarrior_AddInjury",
+                                    "value" : "1",
+                                    "valueConstant" : null,
+                                    "additionalValues" : null
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        }
+    ],
+    "PublishState" : "PUBLISHED",
+    "ValidationState" : "UNTESTED",
+    "EventType" : "NORMAL",
+    "OneTimeEvent" : false,
+    "Tags" : {
+        "tagSetSourceFile" : "tags/EventTags",
+        "items" : []
+    }
+}

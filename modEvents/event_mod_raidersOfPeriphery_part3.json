@@ -1,0 +1,335 @@
+{
+    "Description" : {
+        "Id" : "event_mod_raidersOfPeriphery_part3",
+        "Name" : "Periphery settlement raid, Part III",
+        "Details" : "The ground trembled as the Locust  lumbered around to the other side of the building where we had taken cover. Its rusty joints creaked, but the machine's deadly potential was undeniable. We huddled in the shadows, holding our breath, our only hope being that we remained undetected.\r\n\r\nA booming voice echoed through the building, amplified by the 'Mech's external speakers. \"This is your last chance. Surrender now, or I'll level this building. You have until the count of zero.\"\r\n\r\nThe countdown began, the mechanical voice relentless. \"Ten... nine...\"\r\n\r\nI exchanged glances with [[TGT_MW,{TGT_MW.Callsign}]] and [[SCN_MW,{SCN_MW.Callsign}]], weighing our dwindling options. The walls around us felt thinner with each passing second, the promise of destruction hanging in the air.\r\n\r\n\"Eight... seven...\"\r\n\r\nMy mind raced, tryying to decide our next move. We are seasoned mechwarriors, not prone to panic, but the situation was dire. The raiders had us cornered, and our chances of survival were slim.\r\n\r\n\"Six... five...\"",
+        "Icon" : "uixTxrSpot_FightinTheSettlement.png"
+    },
+    "Scope" : "Company",
+    "Weight" : 10,
+    "Requirements" : {
+        "Scope" : "Company",
+        "RequirementTags" : {
+            "tagSetSourceFile" : "",
+            "items" : []
+        },
+        "ExclusionTags" : {
+            "tagSetSourceFile" : "",
+            "items" : []
+        },
+        "RequirementComparisons" : []
+    },
+    "AdditionalRequirements" : [
+        {
+            "Scope" : "MechWarrior",
+            "RequirementTags" : {
+                "tagSetSourceFile" : "",
+                "items" : [
+                    "eventRaiderPeriphery01"
+                ]
+            },
+            "ExclusionTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "RequirementComparisons" : []
+        }
+    ],
+    "AdditionalObjects" : [
+        {
+            "Scope" : "SecondaryMechWarrior",
+            "Requirements" : {
+                "Scope" : "SecondaryMechWarrior",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : [
+                        "eventRaiderPeriphery02"
+                    ]
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        }
+      
+    ],
+    "Options" : [
+        {
+            "Description" : {
+                "Id" : "outcome_0",
+                "Name" : "Continue",
+                "Details" : "Continue",
+                "Icon" : null
+            },
+            "RequirementList" : [
+                {
+                    "Scope" : "Commander",
+                    "RequirementTags" : {
+                        "tagSetSourceFile" : "",
+                        "items" : []
+                    },
+                    "ExclusionTags" : {
+                        "tagSetSourceFile" : "",
+                        "items" : []
+                    },
+                    "RequirementComparisons" : []
+                }
+            ],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_0",
+                        "Name" : "FinalStand",
+                        "Details" : "Just as hope seemed to dwindle, a familiar voice crackled over my coms. \"Zeroed in on the vermin,\" came the steady tone of [[TRT_MW,{TRT_MW.Callsign}]].\r\n\r\nIn the next instant, a barrage of slammed into the enemy Locust, courtesy of [[TRT_MW,{TRT_MW.Callsign}]]'s {SCN_UNIT.Name} BattleMech. The force of the alpha strike overwhelmed the Locust, sending it crashing to the ground in a heap of twisted metal.\r\n\r\nThe raiders outside began to panic, their earlier bravado evaporating in the face of rescue forces from Argo. The inexperienced pilot of the Locust scrambled out of the fallen 'Mech, abandoning it in sheer terror.\r\n\r\n\r\nAs the dust settled, [[TRT_MW,{TRT_MW.Callsign}]]'s voice boomed over the external speakers. \"Did you guys find any meat on this forsaken planet? I'm so tired of potatoes.\"\r\n\r\n \"Negative. Just trouble. Thanks for the save,\" [[TGT_MW,{TGT_MW.Callsign}]] answers.\r\n\r\n\"Figures,\" [[TRT_MW,{TRT_MW.Callsign}]] sighed. \"Let's get you back to the Argo.\"",
+                        "Icon" : null
+                    },
+                    "Weight" : 50,
+                    "Results" : [
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart3"
+                                ]
+                            },
+                            "Stats" : [
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "Morale",
+                                    "value" : "2",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                }
+                            ],
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : [
+                                {
+                                    "Type" : "Mech_AddRoster",
+                                    "value" : "mechdef_locust_LCT-1V",
+                                    "valueConstant" : null,
+                                    "additionalValues" : null
+                                }
+                            ],
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "MechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeriphery01"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "SecondaryMechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeriphery02"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "Commander",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "Event_Commander_Wounded01"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                },
+				{
+                    "Description" : {
+                        "Id" : "outcome_0_0",
+                        "Name" : "FinalStand",
+                        "Details" : "Just as hope seemed to dwindle, a familiar voice crackled over my coms. \"Zeroed in on the vermin,\" came the steady tone of [[TRT_MW,{TRT_MW.Callsign}]].\r\n\r\nIn the next instant, a barrage of slammed into the enemy Locust, courtesy of [[TRT_MW,{TRT_MW.Callsign}]]'s {SCN_UNIT.Name} BattleMech. The force of the alpha strike overwhelmed the Locust, sending it crashing to the ground in a heap of twisted metal.\r\n\r\nThe raiders outside began to panic, their earlier bravado evaporating in the face of rescue forces from Argo. The inexperienced pilot of the Locust scrambled out of the fallen 'Mech, abandoning it in sheer terror.\r\n\r\n\r\nAs the dust settled, [[TRT_MW,{TRT_MW.Callsign}]]'s voice boomed over the external speakers. \"Did you guys find any meat on this forsaken planet? I'm so tired of potatoes.\"\r\n\r\n \"Negative. Just trouble. Thanks for the save,\" [[TGT_MW,{TGT_MW.Callsign}]] answers.\r\n\r\n\"Figures,\" [[TRT_MW,{TRT_MW.Callsign}]] sighed. \"Let's get you back to the Argo.\"",
+                        "Icon" : null
+                    },
+                    "Weight" : 50,
+                    "Results" : [
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeripheryPart3"
+                                ]
+                            },
+                            "Stats" : [
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "Morale",
+                                    "value" : "2",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                }
+                            ],
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "MechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeriphery01"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "SecondaryMechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventRaiderPeriphery02"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "Commander",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "Event_Commander_Wounded01"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        }
+    ],
+    "PublishState" : "PUBLISHED",
+    "ValidationState" : "UNTESTED",
+    "EventType" : "UNSELECTABLE",
+    "OneTimeEvent" : true,
+    "Tags" : {
+        "tagSetSourceFile" : "tags/EventTags",
+        "items" : []
+    }
+}

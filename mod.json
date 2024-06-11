@@ -1,0 +1,18 @@
+{
+    "Name": "StoriesOfTheInnerSphere",
+    "Enabled": true,
+
+    "Version": "0.2.0",
+    "Description": "CYOA story in BEX",
+    "Author": "Warenwolf/MRB",
+	
+	"DependsOn": [],
+	
+		
+		
+    "Manifest": [
+	{ "Type": "SimGameConversations", "Path": "conversations" },
+	{ "Type": "Sprite", "Path": "images" },    
+	{ "Type": "SimGameEventDef", "Path": "modEvents", "AddToDB": true }]
+	
+}
