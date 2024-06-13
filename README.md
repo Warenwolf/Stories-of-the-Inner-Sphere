@@ -1,6 +1,6 @@
-# Introduction to the "Stories of the Inner Sphere" 
+## Introduction to the "Stories of the Inner Sphere" 
 
-![StoreisOfTheInnerSphere](https://github.com/Warenwolf/Stories-of-the-Inner-Sphere/assets/136007621/702ce980-52a1-4048-b2d8-891833f2aaa7)
+<img src="https://github.com/Warenwolf/Stories-of-the-Inner-Sphere/assets/136007621/702ce980-52a1-4048-b2d8-891833f2aaa7" width="600">
 
 Welcome to the "Stories of the Inner Sphere" mod which aims to add more events to is to enrich the existing
 content in the game Battletech (developed by Harebrained Schemes) by introducing additional "events" and
