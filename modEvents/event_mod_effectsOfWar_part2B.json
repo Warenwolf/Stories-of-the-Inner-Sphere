@@ -1,0 +1,281 @@
+{
+    "Description" : {
+        "Id" : "event_mod_effectsOfWar_part2B",
+        "Name" : "Effects of a war, Part II",
+        "Details" : "The bar was dimly lit and smelled of stale beer and cheap perfume used by prostitutes. Darius and I sat in a shadowy corner, nursing drinks we had no intention of finishing. The wait for news from Saul was agonizing.\r\n\r\nThe door creaked open and a familiar figure slipped inside. It was [[TGT_MW,{TGT_MW.Callsign}]], {TGT_MW.Det} eyes scanning the room before settling on us. {TGT_MW.Subj_C} approached, a grin spreading across {TGT_MW.Det} face.\r\n\r\n\"Commander, Darius,\" [[TGT_MW,{TGT_MW.Callsign}]] said, sliding into the booth. \"Your friend Saul got me out. Military police released me without even processing me.\"\r\n\r\nRelief washed over me, but [[TGT_MW,{TGT_MW.Callsign}]]\u2019s expression turned serious. \"But there might be a catch. I overheard one of Saul's men driving me here mentioning that Saul got trouble with the [[DM.BaseDescriptionDefs[LoreMaskirovka],Maskirovka]]. The two of them were really scared.\"\r\n\r\n\r\nDarius cursed under his breath. \"That complicates things. If the Maskirovka is involved, Saul might be compromised.\"\r\n\r\nI nodded, weighing our options. \"Saul came through for us with [[TGT_MW,{TGT_MW.Callsign}]], but we can't ignore the risk. If he's under Maskirovka\u2019s thumb, he might turn on us to save his own skin.\"\r\n\r\nDarius leaned forward. \"So, do we cut ties with Saul or use him while keeping a close watch?\"",
+        "Icon" : "uixTxrSpot_seedyBar"
+    },
+    "Scope" : "Company",
+    "Weight" : 10,
+    "Requirements" : {
+        "Scope" : "Company",
+        "RequirementTags" : {
+            "tagSetSourceFile" : "",
+            "items" : []
+        },
+        "ExclusionTags" : {
+            "tagSetSourceFile" : "Tags/CompanyTags",
+            "items" : []
+        },
+        "RequirementComparisons" : [
+            {
+                "obj" : "Travel",
+                "op" : "Equal",
+                "val" : 0,
+                "valueConstant" : "0"
+            }
+        ]
+    },
+    "AdditionalRequirements" : [
+        {
+            "Scope" : "MechWarrior",
+            "RequirementTags" : {
+                "tagSetSourceFile" : "",
+                "items" : [
+                    "eventEffectsOfWarPrisoner"
+                ]
+            },
+            "ExclusionTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "RequirementComparisons" : [
+                {
+                    "obj" : "Injuries",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : "0"
+                }
+            ]
+        },
+        {
+            "Scope" : "StarSystem",
+            "RequirementTags" : {
+                "tagSetSourceFile" : "Tags/PlanetTags",
+                "items" : [
+                    "planet_faction_liao"
+                ]
+            },
+            "ExclusionTags" : {
+                "tagSetSourceFile" : "",
+                "items" : []
+            },
+            "RequirementComparisons" : []
+        }
+    ],
+    "AdditionalObjects" : [    
+    ],
+    "Options" : [
+        {
+            "Description" : {
+                "Id" : "outcome_0",
+                "Name" : "Continue trusting Saul",
+                "Details" : "Continue trusting Saul",
+                "Icon" : null
+            },
+            "RequirementList" : [],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_0",
+                        "Name" : "Talk01",
+                        "Details" : "Hours passed, the tension in the bar thickening with each minute. Finally, the door swung open and Saul walked in, a weary but triumphant look on his face.\r\n\r\n\"Mr. {COMMANDER.LastName},\" Saul greeted me, sliding into the booth. \"The convoy with your crew is en route. They'll be at the spaceport in one hour.\"\r\n\r\nRelief washed over me like a wave. \"You came through, Saul.\"\r\n\r\nHe shrugged, a hint of pride in his eyes. \"A deal's a deal. Your people will be back soon.\"\r\n\r\nDarius looked at Saul, skepticism replaced by gratitude. \"And the money?\"\r\n\r\n\"Used wisely,\" Saul replied. \"Enough to grease the right palms and ensure your crew\u2019s safe passage.\"\r\n\r\nWe left the bar and hurried to the spaceport, anticipation building with every step. When the convoy arrived, seeing our detained crew members safe and sound was a moment of profound relief.\r\n\r\nAs the Argo\u2019s ramp closed behind us, I turned to Darius. \"We took a risk, and it paid off this time.\"\r\n\r\nDarius nodded, a rare smile on his face. \"Let's hope our luck holds.\"\r\n\r\nFor now, we had our people back, and that was all that mattered.",
+                        "Icon" : null
+                    },
+                    "Weight" : 75,
+                    "Results" : [
+                        {
+                            "Scope" : "MechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventEffectsOfWarPrisoner"
+                                ]
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        },
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "eventEffectsOfWar_crime"
+                                ]
+                            },
+                            "Stats" : [
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "Morale",
+                                    "value" : "4",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                }
+                            ],
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                },
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_1",
+                        "Name" : "Talk02",
+                        "Details" : "Hours passed, and the bar grew quieter. Darius and I exchanged worried glances as the clock ticked on.\r\n\r\n\"We should have heard something by now,\" Darius muttered, his unease palpable.\r\n\r\nReluctantly, we decided to return to the Argo. The ship felt eerily empty as we walked the corridors, heading straight to the conference room. I activated the terminal - no incoming messages from Saul or his associates.\r\n\r\n\"Commander, look at this,\" Darius said, pointing to the screen, showing the latest local news - one headline read: Local Crime Boss Killed.. The article detailed the man's connections to various underworld activities and a recent crackdown on corruption by the Maskirovka.\r\n\r\nMy heart sank as the realization hit. \"This might be about Saul...\"\r\n\r\nDarius ran a hand through his hair, frustration evident. \"And our money? Our crew?\"\r\n\r\nI accessed our financial records, confirming the transaction to Saul,  \"The money is gone and our people...they're not coming back.\"\r\n\r\nI knew I had one more difficult task ahead. I turned to Darius, my voice heavy with sorrow. \"We have to inform the crew that we've failed to rescue their colleagues.\"",
+                        "Icon" : null
+                    },
+                    "Weight" : 25,
+                    "Results" : [
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : [
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "Morale",
+                                    "value" : "-5",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                },
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "MedTechSkill",
+                                    "value" : "-2",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                },
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "MechTechSkill",
+                                    "value" : "-2000",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                }
+                            ],
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : true,
+                            "ResultDuration" : 30
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        },
+        {
+            "Description" : {
+                "Id" : "outcome_1",
+                "Name" : "Accept the loss of money and get out of there",
+                "Details" : "Accept the loss of money and get out of there",
+                "Icon" : null
+            },
+            "RequirementList" : [],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_1_0",
+                        "Name" : "Accepting01",
+                        "Details" : "Back in the Argo's conference room, the weight of our options pressed heavily on me. Darius stood by, his calm demeanor a stark contrast to the tension in the room. Sumire and Yang were there too, their frustration palpable.\r\n\r\n\"We can't just leave them, Commander,\" Sumire said, her voice sharp with emotion. \"There must be something we can do.\"\r\n\r\nYang nodded, his face flushed. \"They're our crew, our family. This isn't right.\"\r\n\r\nI shook my head, feeling the harsh reality settle in. \"If we push any harder, we risk a full-blown conflict with the Capellan Confederation. We're outgunned and outmaneuvered here.\"\r\n\r\nSumire slammed her fist on the table. \"So we just let them take our people? Let them get swept up in this madness?\"\r\n\r\nDarius stepped forward, his voice steady and reassuring. \"Sumire, Yang, listen. The Commander is right. If we escalate this, more lives could be at stake. Not just our captured crew, but everyone on this ship. Dealing with Saul further could attract the Maskirovka, and that's a conflict we can't afford.\"\r\n\r\nSumire looked at Darius, her eyes filled with anger and resignation. \"So, what do we tell the crew?\"\r\n\r\nI took a deep breath, feeling the crushing weight of leadership. \"We tell them the truth. That we're not giving up, but we have to tread carefully. We'll continue to look for opportunities, but right now, we have to keep the ship and the rest of the crew safe.\"\r\n\r\nYang shook his head, his frustration evident. \"It's a bitter pill to swallow.\"\r\n\r\n\"One of many,\" I muttered, feeling the burden settle even heavier on my shoulders.",
+                        "Icon" : null
+                    },
+                    "Weight" : 100,
+                    "Results" : [
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : [
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "Morale",
+                                    "value" : "-5",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                },
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "MedTechSkill",
+                                    "value" : "-2",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                },
+                                {
+                                    "typeString" : "System.Int32",
+                                    "name" : "MechTechSkill",
+                                    "value" : "-2000",
+                                    "set" : false,
+                                    "valueConstant" : null
+                                }
+                            ],
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : true,
+                            "ResultDuration" : 30
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        }
+    ],
+    "PublishState" : "PUBLISHED",
+    "ValidationState" : "UNTESTED",
+    "EventType" : "UNSELECTABLE",
+    "OneTimeEvent" : true,
+    "Tags" : {
+        "tagSetSourceFile" : "tags/EventTags",
+        "items" : []
+    }
+}

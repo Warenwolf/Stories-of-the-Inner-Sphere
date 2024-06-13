@@ -1,0 +1,490 @@
+{
+    "Description": {
+        "Id": "event_mod_effectsOfWar_part1",
+        "Name": "Effects of a war",
+        "Details": "The steel corridors of the Argo hummed softly, a steady vibration from the ship's ancient engines. I stood in my dimly lit office, poring over maps and logistics reports, the glow of the monitors casting long shadows. The intercom crackled to life, snapping me out of my focus.\r\n\r\n\"Commander, we have a situation,\" Darius' voice was tense, urgent. \"Meet me in the conference room. Now.\"\r\n\r\nI pushed away from the console and hurried through the narrow passages. The doors slid open with a hiss, and I found Darius pacing, his expression grim. He straightened as I entered, his eyes locking onto mine.\r\n\r\n\"Darius, what's going on?\"\r\n\r\n\"It's bad, Commander,\" he said, taking a deep breath. \"The military police have detained several of crew members who are [[DM.Factions[faction_Liao],Cappellan]] nationals and arrested [[TGT_MW,{TGT_MW.Callsign}]] when he tried to claim mercenary company rights.\"\r\n\r\n\"What?\" I felt a surge of anger and disbelief. \"On what grounds!?\"\r\n\r\n\"Their commander, certain Colonel Brannigan is claiming that, due to the Andurien-Canopian alliance's invasion of the Capellan Confederation, they have the right to impress Capellan citizens into their armed forces,\" Darius explained, his voice edged with frustration. \"They're using the conflict as an excuse to bolster their ranks with anyone they deem fit.\"\r\n\r\nI clenched my fists, trying to rein in my temper. \"This is outrageous. [[TGT_MW,{TGT_MW.Callsign}]] and our crew have nothing to do with that conflict. They are infringing on our rights as independent mercenary company. We can't let this stand.\"\r\n\r\nDarius nodded. \"I know, Commander. But the colonel is adamant. He says it's a matter of planetary security and legal jurisdiction. We don't have much leverage here.\"",
+        "Icon": "uixTxrSpot_TwoGuards"
+    },
+    "Scope": "Company",
+    "Weight": 25,
+    "Requirements": {
+        "Scope": "Company",
+        "RequirementTags": {
+            "tagSetSourceFile": "",
+            "items": [
+                "timeline_3030"
+            ]
+        },
+        "ExclusionTags": {
+            "tagSetSourceFile": "Tags/CompanyTags",
+            "items": [
+                "timeline_3035",
+                "ALLIED_FACTION_Liao"
+            ]
+        },
+        "RequirementComparisons": [
+            {
+                "obj": "Travel",
+                "op": "Equal",
+                "val": 0,
+                "valueConstant": "0"
+            }
+        ]
+    },
+    "AdditionalRequirements": [
+        {
+            "Scope": "MechWarrior",
+            "RequirementTags": {
+                "tagSetSourceFile": "Tags/PilotTags",
+                "items": []
+            },
+            "ExclusionTags": {
+                "tagSetSourceFile": "",
+                "items": []
+            },
+            "RequirementComparisons": [
+                {
+                    "obj": "Injuries",
+                    "op": "Equal",
+                    "val": 0,
+                    "valueConstant": "0"
+                }
+            ]
+        },
+        {
+            "Scope": "StarSystem",
+            "RequirementTags": {
+                "tagSetSourceFile": "Tags/PlanetTags",
+                "items": [
+                    "planet_faction_liao"
+                ]
+            },
+            "ExclusionTags": {
+                "tagSetSourceFile": "",
+                "items": []
+            },
+            "RequirementComparisons": []
+        }
+    ],
+    "AdditionalObjects": [],
+    "Options": [
+        {
+            "Description": {
+                "Id": "outcome_0",
+                "Name": "Try to negotiate with Col Brannigan",
+                "Details": "(3,500,000 C-Bills)",
+                "Icon": null
+            },
+            "RequirementList": [
+                {
+                    "Scope": "Company",
+                    "RequirementTags": {
+                        "tagSetSourceFile": "",
+                        "items": []
+                    },
+                    "ExclusionTags": {
+                        "tagSetSourceFile": "",
+                        "items": []
+                    },
+                    "RequirementComparisons": [
+                        {
+                            "obj": "Funds",
+                            "op": "GreaterThan",
+                            "val": 3500000,
+                            "valueConstant": "3500000"
+                        }
+                    ]
+                },
+                {
+                    "Scope": "Company",
+                    "RequirementTags": {
+                        "tagSetSourceFile": "",
+                        "items": []
+                    },
+                    "ExclusionTags": {
+                        "tagSetSourceFile": "",
+                        "items": []
+                    },
+                    "RequirementComparisons": [
+                        {
+                            "obj": "Reputation.Liao",
+                            "op": "GreaterThan",
+                            "val": -20,
+                            "valueConstant": "-20"
+                        }
+                    ]
+                }
+            ],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_0_0",
+                        "Name": "Talk01",
+                        "Details": "The military police HQ was surprisingly stylish, a stark contrast to the tense atmosphere. The military police chief, Colonel Brannigan, leaned back in his chair, a smug smile playing on his lips.\r\n\r\n\r\n\"I understand your predicament, Mr. {COMMANDER.LastName} ,\" Brannigan drawled, his eyes gleaming with a predatory gleam. \"However, laws are laws. But,\" he paused, savoring the moment, \"we are reasonable men. \"\r\n\r\n\r\nI exchanged a glance with Darius, who nodded subtly.\r\n\r\n\"How much?\" I asked, my voice steady.\r\n\r\nBrannigan's smile widened. \"3,500,000 C-Bills. Consider it a contribution to the Capellan war fund.\"\r\n\r\n\r\nI clenched my jaw. \"That\u0092s extortion, Colonel.\"\r\n\r\n\"Think of it as an investment in peace,\" Brannigan replied, unperturbed. \"Your people will return to you and the Confederation gains the resources it needs.\"\r\n\r\nDarius leaned in. \"And if we refuse?\"\r\n\r\nBrannigan shrugged. \"Then your former crew will serve their nation in [[DM.BaseDescriptionDefs[LoreLiaoCCAF],CCAF]] as is their obligation.\"",
+                        "Icon": null
+                    },
+                    "Weight": 100,
+                    "Results": [
+                        {
+                            "Scope": "MechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "eventEffectsOfWarPrisoner"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": null,
+                            "Actions": [
+                                {
+                                    "Type": "System_StartConversation",
+                                    "value": "9ced6a2761b78ddd79d139ab",
+                                    "valueConstant": null,
+                                    "additionalValues": [
+                                        null,
+                                        null,
+                                        "Ship",
+                                        null
+                                    ]
+                                },
+                                {
+                                    "Type": "MechWarrior_SetTimeout",
+                                    "value": "360",
+                                    "valueConstant": null,
+                                    "additionalValues": null
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        },
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "eventEffectsOfWar_bribe"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": null,
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "ExclusionTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "RequirementComparisons": []
+            }
+        },
+        {
+            "Description": {
+                "Id": "outcome_1",
+                "Name": "Better call Saul...",
+                "Details": "You have contacts with local crime world",
+                "Icon": null
+            },
+            "RequirementList": [
+                {
+                    "Scope": "Commander",
+                    "RequirementTags": {
+                        "tagSetSourceFile": "Tags/CommanderTags",
+                        "items": ["commander_underworldFriends"]
+                    },
+                    "ExclusionTags": {
+                        "tagSetSourceFile": "Tags/CommanderTags",
+                        "items": [ ]
+                    },
+                    "RequirementComparisons": []
+                }
+            ],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_1_0",
+                        "Name": "Talko2",
+                        "Details": "In the dimly lit corner of a seedy tavern, the air thick with smoke and tension, I met with Saul, a known fixer with deep ties to the underworld. Darius stood beside me, his eyes scanning the room for any signs of trouble.\r\n\r\nSaul leaned forward, his scarred face illuminated by the flickering light. \"You've got a problem, Commander. I hear Colonels Brannigan's goons got your men...\"\r\n\r\n\"We need our people back, Saul,\" I said, keeping my voice low. \"What can you do?\"\r\n\r\nSaul grinned, showing a row of way too white teeth. \"Brannigan's got plenty of palms that need greasing. For a small sum of 650 000 C-Bills, I can make sure those palms are full and your crew walks free.\"\r\n\r\nDarius crossed his arms, skeptical. \"And how do we know this won't blow back on us?\"\r\n\r\nSaul's grin widened. \"Because I'm the best at what I do. You pay, I handle the rest. Clean and quiet.\"\r\n\r\nI met Darius' gaze, and he gave a reluctant nod. \"Alright, Saul,\" I said. \"You've got a deal. But this better work.\"\r\n\r\nSaul chuckled. \"Trust me, Commander. In few hours your people will be free and Colonel Brannigan will be none the wiser.\"",
+                        "Icon": null
+                    },
+                    "Weight": 100,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "eventEffectsOfWar_crime"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Funds",
+                                    "value": "-650000",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": [
+                                {
+                                    "Type": "System_StartConversation",
+                                    "value": "9ced6a2761b78ddd79d139ab",
+                                    "valueConstant": null,
+                                    "additionalValues": [
+                                        null,
+                                        null,
+                                        "Ship",
+                                        null
+                                    ]
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        },
+                        {
+                            "Scope": "MechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "eventEffectsOfWarPrisoner"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": null,
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "ExclusionTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "RequirementComparisons": []
+            }
+        },
+        {
+            "Description": {
+                "Id": "outcome_2",
+                "Name": "Contact your Capellan Mercenary Liaison",
+                "Details": "(CCAF respects you)",
+                "Icon": null
+            },
+            "RequirementList": [
+                {
+                    "Scope": "Company",
+                    "RequirementTags": {
+                        "tagSetSourceFile": "Tags/CompanyTags",
+                        "items": []
+                    },
+                    "ExclusionTags": {
+                        "tagSetSourceFile": "",
+                        "items": []
+                    },
+                    "RequirementComparisons": [
+                        {
+                            "obj": "Reputation.Liao",
+                            "op": "GreaterThan",
+                            "val": 50,
+                            "valueConstant": "50"
+                        }
+                    ]
+                }
+            ],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_2_0",
+                        "Name": "MarinaLiaoConnection",
+                        "Details": "In the Argo's command center, tension filled the air. Darius and I stood alone, contemplating our options.\r\n\r\n\"We can't just leave them, Commander,\" Darius said, his voice calm but firm. \"But we need to be smart about this.\"\r\n\r\nI nodded, thinking quickly. \"We have another option, Darius. Lady Marina Liao.\"\r\n\r\nDarius raised an eyebrow. \"Our Mercenary Liaison Officer for the Capellan Confederation? Do you think she\u2019ll help?\"\r\n\r\nI met his gaze. \"We've built a good relationship with her. If anyone can cut through this bureaucratic nonsense, it's Marina.\"\r\n\r\nHe nodded slowly. \"It's worth a shot.\"\r\n\r\nLater that day we had Marina on our com link. She looked composed, but there was a hint of curiosity in her eyes that even low resolution holographic image could not hide.\r\n\r\n\"Commander, it's been a while. What\u2019s the urgency?\" Marina asked.\r\n\r\nI quickly explained the situation, detailing the arrest of our crew by the military police. \"Marina, we need your help to get them released. They're being forced into the armed forces under the guise of the threat of Andurien-Canopian invasion.\"\r\n\r\nShe frowned, considering my words. \"This is a delicate situation, Commander. But given our history and the service your unit has provided to the Confederation, I\u2019ll see what I can do.\"\r\n\r\nDarius and I waited anxiously as Marina made her calls. After what felt like an eternity, her image reappeared on the screen.\r\n\r\n\"Good news,\" she said, a slight smile playing on her lips. \"I've spoken with the governor. Your crew will be released immediately. Consider this a favor between friends.\"\r\n\r\nI let out a breath I hadn't realized I was holding. \"Thank you, Marina. You don't know what this means to us.\"\r\n\r\n\"Just remember this when we next need your services,\" she said with a nod before signing off.",
+                        "Icon": null
+                    },
+                    "Weight": 100,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Morale",
+                                    "value": "2",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "ExclusionTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "RequirementComparisons": []
+            }
+        },
+        {
+            "Description": {
+                "Id": "outcome_3",
+                "Name": "Accept the situation for what it is and avoid conflict with Capellans.",
+                "Details": "Accept the situation for what it is and avoid conflict with Capellans.",
+                "Icon": null
+            },
+            "RequirementList": [],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_3_0",
+                        "Name": "Accepting01",
+                        "Details": "Back in the Argo's conference room, the weight of our options pressed heavily on me. Darius stood by, his calm demeanor a stark contrast to the tension in the room. Sumire and Yang were there too, their frustration palpable.\r\n\r\n\"We can't just leave them, Commander,\" Sumire said, her voice sharp with emotion. \"There must be something we can do.\"\r\n\r\nYang nodded, his face flushed. \"They're our crew, our family. This isn't right..\"\r\n\r\nI shook my head, feeling the harsh reality settle in. \"If we push any harder, we risk a full-blown conflict with the Capellan Confederation. We're outgunned and outmaneuvered here.\"\r\n\r\nSumire slammed her fist on the table. \"So we just let them take our people? Let them get swept up in this madness?\"\r\n\r\nDarius stepped forward, his voice steady and reassuring. \"Sumire, Yang, listen. The Commander is right. If we escalate this, more lives could be at stake. Not just our captured crew, but everyone on this ship. We have to think about the bigger picture.\"\r\n\r\nSumire looked at Darius, her eyes filled with anger and resignation. \"So, what do we tell the crew?\"\r\n\r\nI took a deep breath, feeling the crushing weight of leadership. \"We tell them the truth. That we're not giving up, but we have to tread carefully. We'll continue to look for opportunities, but right now, we have to keep the ship and the rest of the crew safe.\"\r\n\r\nYang shook his head, his frustration evident. \"It's a bitter pill to swallow.\"\r\n\r\n\"One of many,\" I muttered, feeling the burden settle even heavier on my shoulders.Back in the Argo's command center, the weight of our options pressed heavily on me. Darius stood by, his calm demeanor a stark contrast to the tension in the room. Sumire and Yang were there too, their frustration palpable.\r\n\r\n\"We can't just leave them, Commander,\" Sumire said, her voice sharp with emotion. \"There must be something we can do.\"\r\n\r\nYang nodded, his face flushed. \"They're our crew, our family. This isn't right..\"\r\n\r\nI shook my head, feeling the harsh reality settle in. \"If we push any harder, we risk a full-blown conflict with the Capellan Confederation. We're outgunned and outmaneuvered here.\"\r\n\r\nSumire slammed her fist on the table. \"So we just let them take our people? Let them get swept up in this madness?\"\r\n\r\nDarius stepped forward, his voice steady and reassuring. \"Sumire, Yang, listen. The Commander is right. If we escalate this, more lives could be at stake. Not just our captured crew, but everyone on this ship. We have to think about the bigger picture.\"\r\n\r\nSumire looked at Darius, her eyes filled with anger and resignation. \"So, what do we tell the crew?\"\r\n\r\nI took a deep breath, feeling the crushing weight of leadership. \"We tell them the truth. That we're not giving up, but we have to tread carefully. We'll continue to look for opportunities, but right now, we have to keep the ship and the rest of the crew safe.\"\r\n\r\nYang shook his head, his frustration evident. \"It's a bitter pill to swallow.\"\r\n\r\n\"One of many,\" I muttered, feeling the burden settle even heavier on my shoulders.",
+                        "Icon": null
+                    },
+                    "Weight": 100,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Morale",
+                                    "value": "-5",
+                                    "set": false,
+                                    "valueConstant": null
+                                },
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "MedTechSkill",
+                                    "value": "-2",
+                                    "set": false,
+                                    "valueConstant": null
+                                },
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "MechTechSkill",
+                                    "value": "-2000",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 30
+                        },
+                        {
+                            "Scope": "MechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": null,
+                            "Actions": [
+                                {
+                                    "Type": "MechWarrior_SetTimeout",
+                                    "value": "360",
+                                    "valueConstant": null,
+                                    "additionalValues": null
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "ExclusionTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "RequirementComparisons": []
+            }
+        }
+    ],
+    "PublishState": "PUBLISHED",
+    "ValidationState": "UNTESTED",
+    "EventType": "NORMAL",
+    "OneTimeEvent": true,
+    "Tags": {
+        "tagSetSourceFile": "tags/EventTags",
+        "items": []
+    }
+}
