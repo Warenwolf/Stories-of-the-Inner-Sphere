@@ -3,7 +3,7 @@
         "Id" : "event_mod_raidersOfPeriphery_part3",
         "Name" : "Periphery settlement raid, Part III",
         "Details" : "The ground trembled as the Locust  lumbered around to the other side of the building where we had taken cover. Its rusty joints creaked, but the machine's deadly potential was undeniable. We huddled in the shadows, holding our breath, our only hope being that we remained undetected.\r\n\r\nA booming voice echoed through the building, amplified by the 'Mech's external speakers. \"This is your last chance. Surrender now, or I'll level this building. You have until the count of zero.\"\r\n\r\nThe countdown began, the mechanical voice relentless. \"Ten... nine...\"\r\n\r\nI exchanged glances with [[TGT_MW,{TGT_MW.Callsign}]] and [[SCN_MW,{SCN_MW.Callsign}]], weighing our dwindling options. The walls around us felt thinner with each passing second, the promise of destruction hanging in the air.\r\n\r\n\"Eight... seven...\"\r\n\r\nMy mind raced, tryying to decide our next move. We are seasoned mechwarriors, not prone to panic, but the situation was dire. The raiders had us cornered, and our chances of survival were slim.\r\n\r\n\"Six... five...\"",
-        "Icon" : "uixTxrSpot_FightinTheSettlement"
+        "Icon" : "uixTxrSpot_FightinTheSettlement.png"
     },
     "Scope" : "Company",
     "Weight" : 10,

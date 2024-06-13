@@ -6,7 +6,7 @@
         "Icon" : "uixTxrSpot_RuralTown.png"
     },
     "Scope" : "Company",
-    "Weight" : 20,
+    "Weight" : 9999,
     "Requirements" : {
         "Scope" : "Company",
         "RequirementTags" : {

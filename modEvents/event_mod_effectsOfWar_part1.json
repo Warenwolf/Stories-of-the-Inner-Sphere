@@ -6,7 +6,7 @@
         "Icon": "uixTxrSpot_TwoGuards"
     },
     "Scope": "Company",
-    "Weight": 25,
+    "Weight": 9999,
     "Requirements": {
         "Scope": "Company",
         "RequirementTags": {
@@ -18,7 +18,7 @@
         "ExclusionTags": {
             "tagSetSourceFile": "Tags/CompanyTags",
             "items": [
-                "timeline_3035",
+                "timeline_3099",
                 "ALLIED_FACTION_Liao"
             ]
         },

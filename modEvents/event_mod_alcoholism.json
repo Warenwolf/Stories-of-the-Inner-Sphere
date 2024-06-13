@@ -1,0 +1,262 @@
+{
+    "Description" : {
+        "Id" : "event_mod_alcoholism",
+        "Name" : "Alcoholism treatment",
+        "Details" : "[[TGT_MW,{TGT_MW.Callsign}]] stumbled through the dimly lit corridors of the Argo, the hum of the ship a constant reminder of battles past. \r\n\r\nThe whiskey bottle, now empty, slipped from {TGT_MW.DET} grasp, clattering to the floor. \r\n\r\n{TGT_MW.SUBJ_C} leaned against the cold steel wall, head throbbing, heart heavier still.\r\n\r\n\r\n\nIn the mech bay, the towering mechs stood silent, their presence a stark contrast to the chaos in {TGT_MW.DET} mind. [[TGT_MW,{TGT_MW.Callsign}]] knew {TGT_MW.Subj} couldn\u2019t keep piloting a BattleMech while drunk. \r\n\r\n\r\n\nBarging in my office, {TGT_MW.Subj} hesitated seeing me wrinkling my nose at the stench eminating from [[TGT_MW,{TGT_MW.Callsign}]]. \r\n\r\n\r\nMy face softened as [[TGT_MW,{TGT_MW.Callsign}]] spoke, {TGT_MW.DET} voice cracking, \"Commander, I can\u2019t keep doing this to myself. To the team.... I need to stop. But\u2026how? What am I supposed to do?\"\n\n\r\n\r\nThe weight of {TGT_MW.DET} question hung in the air, heavy with desperation and hope.",
+        "Icon" : "uixTxrSpot_MedBayPatient"
+    },
+    "Scope" : "MechWarrior",
+    "Weight" : 9999,
+    "Requirements" : {
+        "Scope" : "MechWarrior",
+        "RequirementTags" : {
+            "tagSetSourceFile" : "",
+            "items" : [
+                "pilot_drunk"
+            ]
+        },
+        "ExclusionTags" : {
+            "tagSetSourceFile" : "",
+            "items" : []
+        },
+        "RequirementComparisons" : []
+    },
+    "AdditionalRequirements" : [
+        {
+            "Scope" : "Company",
+            "RequirementTags" : {
+                "tagSetSourceFile" : "",
+                "items" : [
+                    "argo_medBay3"
+                ]
+            },
+            "ExclusionTags" : {
+                "tagSetSourceFile" : "Tags/CompanyTags",
+                "items" : [
+                    "event_mod_alcoholism_tag"
+                ]
+            },
+            "RequirementComparisons" : []
+        }
+    ],
+    "AdditionalObjects" : [
+        {
+            "Scope" : "SecondaryMechWarrior",
+            "Requirements" : {
+                "Scope" : "SecondaryMechWarrior",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "Tags/PilotTags",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        }
+    ],
+    "Options" : [
+        {
+            "Description" : {
+                "Id" : "outcome_0",
+                "Name" : "Recommended the medical procedure",
+                "Details" : "Recommended the medical procedure",
+                "Icon" : null
+            },
+            "RequirementList" : [],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_0",
+                        "Name" : "Good ending",
+                        "Details" : "I placed a hand on [[TGT_MW,{TGT_MW.Callsign}]]'s shoulder. \"We\u2019ll get you help,\u201D I said.\r\n\r\n\r\n\r\nWith the Argo\u2019s top of the line medical facilitiy upgrades, [[TGT_MW,{TGT_MW.Callsign}]] began a rigorous detox program.\r\n\r\nThe medbay staff, equipped with cutting-edge technology, monitored his progress closely. Advanced therapies and support sessions helped {TGT_MW.OBJ} regain control. \r\n\r\nEach moment, {TGT_MW.Subj} felt a bit stronger, a bit more like the MechWarrior {TGT_MW.Subj} once was. Finally the medic gave {TGT_MW.OBJ} thumbs up. [[TGT_MW,{TGT_MW.Callsign}]] smiled.",
+                        "Icon" : null
+                    },
+                    "Weight" : 50,
+                    "Results" : [
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "event_mod_alcoholism_tag"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : true,
+                            "ResultDuration" : 360
+                        },
+                        {
+                            "Scope" : "MechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "pilot_morale_high"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : true,
+                            "ResultDuration" : 30
+                        },
+                        {
+                            "Scope" : "MechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : ["pilot_drunk"]
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : false,
+                            "ResultDuration" : 0
+                        }
+                    ]
+                },
+                {
+                    "Description" : {
+                        "Id" : "outcome_0_1",
+                        "Name" : "Bad ending",
+                        "Details" : "I placed a hand on [[TGT_MW,{TGT_MW.Callsign}]]'s shoulder. \u201CWe\u2019ll get you help,\u201D I said. Despite the Argo\u2019s upgraded medical facilities, the journey to sobriety was fraught with setbacks.\r\n\r\nThe treatments didn\u2019t take as hoped. [[TGT_MW,{TGT_MW.Callsign}]]'s body reacted poorly to the mechanical detox protocols. {TGT_MW.DET_C} mind and body resisted the change. \r\n\r\nThe medic on duty shook his head. \u201CWe\u2019ll keep trying,\u201D he said, though doubt lingered in his voice.",
+                        "Icon" : null
+                    },
+                    "Weight" : 50,
+                    "Results" : [
+                        {
+                            "Scope" : "MechWarrior",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "pilot_morale_low"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : true,
+                            "ResultDuration" : 30
+                        },
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "event_mod_alcoholism_tag"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : true,
+                            "ResultDuration" : 160
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        },
+        {
+            "Description" : {
+                "Id" : "outcome_1",
+                "Name" : "Warn about failure rates",
+                "Details" : "Warn about failure rates",
+                "Icon" : null
+            },
+            "RequirementList" : [],
+            "ResultSets" : [
+                {
+                    "Description" : {
+                        "Id" : "outcome_1_0",
+                        "Name" : "EndResult",
+                        "Details" : "My heart sunk but I had to be honest, \u201CMechanical detox is risky, [[TGT_MW,{TGT_MW.Callsign}]]. The failure rate is high. You need conviction to make it work. There are no short cuts...\u201D\r\n\r\n[[TGT_MW,{TGT_MW.Callsign}]] nodded, determination flickering in {TGT_MW.DET} eyes. \u201CI understand, sir. I'll sober up and make my choice when my head is clear.\u201D\r\n\r\n\u201CGood luck,\u201D I replied, hoping it would be enough.\r\n\r\n\r\nLater that day, I see  [[TGT_MW,{TGT_MW.Callsign}]] in the mess hall, laughter echoing as {TGT_MW.Subj} parties, half drunk, a bottle in hand.",
+                        "Icon" : null
+                    },
+                    "Weight" : 100,
+                    "Results" : [
+                        {
+                            "Scope" : "Company",
+                            "Requirements" : null,
+                            "AddedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : [
+                                    "event_mod_alcoholism_tag"
+                                ]
+                            },
+                            "RemovedTags" : {
+                                "tagSetSourceFile" : "",
+                                "items" : []
+                            },
+                            "Stats" : null,
+                            "Actions" : null,
+                            "ForceEvents" : null,
+                            "TemporaryResult" : true,
+                            "ResultDuration" : 160
+                        }
+                    ]
+                }
+            ],
+            "Requirements" : {
+                "Scope" : "Company",
+                "RequirementTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "ExclusionTags" : {
+                    "tagSetSourceFile" : "",
+                    "items" : []
+                },
+                "RequirementComparisons" : []
+            }
+        }
+    ],
+    "PublishState" : "PUBLISHED",
+    "ValidationState" : "UNTESTED",
+    "EventType" : "NORMAL",
+    "OneTimeEvent" : false,
+    "Tags" : {
+        "tagSetSourceFile" : "tags/EventTags",
+        "items" : []
+    }
+}
