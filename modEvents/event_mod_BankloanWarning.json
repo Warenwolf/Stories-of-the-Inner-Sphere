@@ -1,12 +1,12 @@
 {
     "Description" : {
-        "Id" : "event_co_Bankloan2",
-        "Name" : "Repaying your debts",
-        "Details" : "The comm buzzed insistently, breaking the quiet of the Argo's command center. Darius frowned as he keyed it open, greeted by the crisp, businesslike tone of the creditors from Greeley.\r\n\r\n\"Commander,\" he began, turning to you with a neutral expression, \"They're reminding us that today is the repayment deadline. The full amount of the debt will automatically be attempted to be withdrawn from our bank accounts - overdrawing if not enough C-Bills are present on the account.\"",
-        "Icon" : "uixTxrSpot_IncomingTransimission"
+        "Id" : "event_mod_BankloanWarning",
+        "Name" : "Bankloan reminder",
+        "Details" : "As you work in your office, a reminder message pops up on your comm link.\r\n\r\n\r\nIt reminds you that less than two months remain until the date when you must pay your creditors what you owe them.",
+        "Icon" : "uixTxrSpot_ComputerScreen"
     },
     "Scope" : "Company",
-    "Weight" : 8000,
+    "Weight" : 9999,
     "Requirements" : {
         "Scope" : "Company",
         "RequirementTags" : {
@@ -19,7 +19,6 @@
             "tagSetSourceFile" : "",
             "items" : [
                 "company_leopard_loan_fair",
-                "company_argo_loan_offered",
                 "company_argo_loan_Warning"
             ]
         },
@@ -31,7 +30,7 @@
         {
             "Description" : {
                 "Id" : "outcome_0",
-                "Name" : "Repay the loan",
+                "Name" : "Review the loan agreement",
                 "Details" : "[Short term loan]",
                 "Icon" : null
             },
@@ -40,7 +39,9 @@
                     "Scope" : "Company",
                     "RequirementTags" : {
                         "tagSetSourceFile" : "",
-                        "items" : [  "company_argo_loan_short"]
+                        "items" : [
+                            "company_argo_loan_short"
+                        ]
                     },
                     "ExclusionTags" : {
                         "tagSetSourceFile" : "",
@@ -54,7 +55,7 @@
                     "Description" : {
                         "Id" : "outcome_0_0",
                         "Name" : "ShortTermLoan",
-                        "Details" : "3,250,000 C-Bills have been transferred to your creditors.\r\n\r\nFor all intents and purposes, your dealings are concluded.",
+                        "Details" : "Your total debt is at 3,250,000 C-Bills.\r\n\r\n\r\nThe full amount will automatically be withdrawn from our bank accounts on the day the loan matures, causing an overdraft if there are insufficient funds available.",
                         "Icon" : ""
                     },
                     "Weight" : 100,
@@ -64,43 +65,15 @@
                             "Requirements" : null,
                             "AddedTags" : {
                                 "tagSetSourceFile" : "",
-                                "items" : [
-                                    "company_argo_loan_offered"
-                                ]
+                                "items" : []
                             },
                             "RemovedTags" : {
                                 "tagSetSourceFile" : "",
-                                "items" : []
+                                "items" : [
+                                    "company_argo_loan_Warning"
+                                ]
                             },
                             "Stats" : [],
-                            "Actions" : null,
-                            "ForceEvents" : null,
-                            "TemporaryResult" : true,
-                            "ResultDuration" : 720
-                        },
-                        {
-                            "Scope" : "Company",
-                            "Requirements" : null,
-                            "AddedTags" : {
-                                "tagSetSourceFile" : "",
-                                "items" : []
-                            },
-                            "RemovedTags" : {
-                                "tagSetSourceFile" : "",
-                                "items" : [
-                                    "company_argo_loan_short",
-                                    "company_argo_loan"
-                                ]
-                            },
-                            "Stats" : [
-                                {
-                                    "typeString" : "System.Int32",
-                                    "name" : "Funds",
-                                    "value" : "-3250000",
-                                    "set" : false,
-                                    "valueConstant" : null
-                                }
-                            ],
                             "Actions" : null,
                             "ForceEvents" : null,
                             "TemporaryResult" : false,
@@ -113,9 +86,7 @@
                 "Scope" : "Company",
                 "RequirementTags" : {
                     "tagSetSourceFile" : "",
-                    "items" : [
-                      
-                    ]
+                    "items" : []
                 },
                 "ExclusionTags" : {
                     "tagSetSourceFile" : "",
@@ -127,7 +98,7 @@
         {
             "Description" : {
                 "Id" : "outcome_1",
-                "Name" : "Repay the loan",
+                "Name" : "Review the loan agreement",
                 "Details" : "[Long term loan]",
                 "Icon" : null
             },
@@ -136,7 +107,9 @@
                     "Scope" : "Company",
                     "RequirementTags" : {
                         "tagSetSourceFile" : "",
-                        "items" : [ "company_argo_loan_long"]
+                        "items" : [
+                            "company_argo_loan_long"
+                        ]
                     },
                     "ExclusionTags" : {
                         "tagSetSourceFile" : "",
@@ -150,7 +123,7 @@
                     "Description" : {
                         "Id" : "outcome_1_0",
                         "Name" : "LongTermLoand",
-                        "Details" : "5,750,000 C-Bills have been transferred to your creditors.\r\n\r\nFor all intents and purposes, your dealings are concluded.",
+                        "Details" : "Your total debt is at 5,750,000 C-Bills.\r\n\r\n\r\nThe full amount will automatically be withdrawn from our bank accounts on the day the loan matures, causing an overdraft if there are insufficient funds available.",
                         "Icon" : null
                     },
                     "Weight" : 100,
@@ -160,43 +133,15 @@
                             "Requirements" : null,
                             "AddedTags" : {
                                 "tagSetSourceFile" : "",
-                                "items" : [
-                                    "company_argo_loan_offered"
-                                ]
+                                "items" : []
                             },
                             "RemovedTags" : {
                                 "tagSetSourceFile" : "",
-                                "items" : []
+                                "items" : [
+                                    "company_argo_loan_Warning"
+                                ]
                             },
                             "Stats" : [],
-                            "Actions" : null,
-                            "ForceEvents" : null,
-                            "TemporaryResult" : true,
-                            "ResultDuration" : 999
-                        },
-                        {
-                            "Scope" : "Company",
-                            "Requirements" : null,
-                            "AddedTags" : {
-                                "tagSetSourceFile" : "",
-                                "items" : []
-                            },
-                            "RemovedTags" : {
-                                "tagSetSourceFile" : "",
-                                "items" : [
-                                    "company_argo_loan_long",
-                                    "company_argo_loan"
-                                ]
-                            },
-                            "Stats" : [
-                                {
-                                    "typeString" : "System.Int32",
-                                    "name" : "Funds",
-                                    "value" : "-5750000",
-                                    "set" : false,
-                                    "valueConstant" : null
-                                }
-                            ],
                             "Actions" : null,
                             "ForceEvents" : null,
                             "TemporaryResult" : false,
@@ -209,9 +154,7 @@
                 "Scope" : "Company",
                 "RequirementTags" : {
                     "tagSetSourceFile" : "",
-                    "items" : [
-                       
-                    ]
+                    "items" : []
                 },
                 "ExclusionTags" : {
                     "tagSetSourceFile" : "",

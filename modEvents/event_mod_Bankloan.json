@@ -1,60 +1,42 @@
 {
     "Description": {
-        "Id": "event_co_mechbayNeedsHelp",
-        "Name": "All hands on deck",
-        "Details": "Yang arrives to your office with a request. \"Boss, we’re overwhelmed with 'Mech repairs. Can we pull resources from other departments? Alternatively, it would be great if you could assign some MechWarriors with technical skills to help out. Their firsthand experience with operating the 'Mechs gives them insights into the mechanical issues we’re facing, making them well-suited for providing effective support and speeding up the repair process.\"",
-        "Icon": "uixTxrSpot_MechBay"
+        "Id": "event_mod_Bankloan",
+        "Name": "Running low on Funds",
+        "Details": "The mood in Argo's conference room was tense as we gathered for a meeting about our finances. The treasury was running dangerously low and we needed a solution. I turned to Darius. \"We need to secure funds to get through these lean times. Can we reach out to someone willing to offer us some financing options?\"\r\n\r\n\r\nA few hours later, Darius returned with two proposals. \"Commander, I found two options from a company specializing in financing mercenary companies, based in Greeley. These creditors from Greeley are known for their high-risk financing, catering specifically to mercenary outfits like ours.The first option is a one-year loan of 2.5 million C-Bills with a 30% total interest rate, to be paid back in full at the end of the term. The second option is a two-year loan of 5 million C-Bills with a 15% total interest rate, also to be paid back in full at the end of the term.\"\r\n\r\n\r\nYou had some hard decisions to make, balancing the urgent need for a capital injection versus future financial obligations.",
+        "Icon": "uixTxrSpot_DailyBriefing"
     },
-    "Scope": "MechWarrior",
-    "Weight": 300,
+    "Scope": "Company",
+    "Weight": 500,
     "Requirements": {
-        "Scope": "MechWarrior",
+        "Scope": "Company",
         "RequirementTags": {
-            "tagSetSourceFile": "",
-            "items": [
-                "pilot_tech"
-            ]
-        },
-        "ExclusionTags": {
             "tagSetSourceFile": "",
             "items": []
         },
+        "ExclusionTags": {
+            "tagSetSourceFile": "",
+            "items": [
+                "company_leopard_loan_fair",
+                "company_argo_loan_offered",
+				 "company_argo_loan"
+            ]
+        },
         "RequirementComparisons": [
             {
-                "obj": "Injuries",
-                "op": "Equal",
-                "val": 0,
-                "valueConstant": "0"
+                "obj": "Funds",
+                "op": "LessThanOrEqual",
+                "val": 500000,
+                "valueConstant": "500000"
             }
         ]
     },
-    "AdditionalRequirements": [
-        {
-            "Scope": "Company",
-            "RequirementTags": {
-                "tagSetSourceFile": "",
-                "items": []
-            },
-            "ExclusionTags": {
-                "tagSetSourceFile": "",
-                "items": []
-            },
-            "RequirementComparisons": [
-                {
-                    "obj": "TaskDuration",
-                    "op": "GreaterThan",
-                    "val": 15,
-                    "valueConstant": "15"
-                }
-            ]
-        }
-    ],
+    "AdditionalRequirements": [],
     "AdditionalObjects": [],
     "Options": [
         {
             "Description": {
                 "Id": "outcome_0",
-                "Name": "Make do with what you have, Yang",
+                "Name": "Don't take up a loan.",
                 "Details": "Non-participation option",
                 "Icon": ""
             },
@@ -63,12 +45,32 @@
                 {
                     "Description": {
                         "Id": "outcome_0_0",
-                        "Name": "Nothing happens",
-                        "Details": "Yang nods and returns to the chaos of the Mech Bay.",
+                        "Name": "You avoid taking up loans",
+                        "Details": "\"I don't like it\", you say after some thinking.\r\n\r\n\"Let's explore other options before we get into bed with some loan sharks\"",
                         "Icon": ""
                     },
                     "Weight": 100,
-                    "Results": []
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "company_argo_loan_offered"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 360
+                        }
+                    ]
                 }
             ],
             "Requirements": {}
@@ -76,7 +78,7 @@
         {
             "Description": {
                 "Id": "outcome_1",
-                "Name": "Tell Yang he can loan people from other departments",
+                "Name": "Take out a short term loan of 2,500,000 C-Bills with a 30% interest rate.",
                 "Details": " ",
                 "Icon": ""
             },
@@ -85,79 +87,60 @@
                 {
                     "Description": {
                         "Id": "outcome_1_0",
-                        "Name": "techs for 3 weeks",
-                        "Details": "Yang makes the necessary arrangements and a number of people from other departments help his MechTechs.\r\n\r\n I is not much but every bit helps.",
+                        "Name": "ShortTermLoan",
+                        "Details": "Darius nods and makes the necessary arrangement.\r\n\r\nIn twelve months, you will need to repay 3,250,000 C-Bills to your creditors.",
                         "Icon": ""
                     },
-                    "Weight": 75,
+                    "Weight": 100,
                     "Results": [
                         {
                             "Scope": "Company",
                             "Requirements": null,
                             "AddedTags": {
                                 "tagSetSourceFile": "",
-                                "items": []
+                                "items": [
+                                   
+                                    "company_argo_loan_offered"
+                                ]
                             },
                             "RemovedTags": {
                                 "tagSetSourceFile": "",
                                 "items": []
                             },
-                            "Stats": [
-                                {
-                                    "typeString": "System.Int32",
-                                    "name": "MechTechSkill",
-                                    "value": "500",
-                                    "set": false,
-                                    "valueConstant": null
-                                }
-                            ],
+                            "Stats": [],
                             "Actions": null,
                             "ForceEvents": null,
                             "TemporaryResult": true,
-                            "ResultDuration": 21
-                        }
-                    ]
-                },
-                {
-                    "Description": {
-                        "Id": "outcome_1_1",
-                        "Name": "techs for 3 weeks",
-                        "Details": "Yang makes the necessary arrangements and a number of people from other departments help his MechTechs.\r\n\r\n I is not much but every bit helps.\r\n\r\nHowever people dislike being taken away from they usual tasks",
-                        "Icon": ""
-                    },
-                    "Weight": 25,
-                    "Results": [
-                        {
+                            "ResultDuration": 360
+                        },
+						{
                             "Scope": "Company",
                             "Requirements": null,
                             "AddedTags": {
                                 "tagSetSourceFile": "",
-                                "items": []
+                                "items": [
+                                    "company_argo_loan_Warning",
+                                    
+                                ]
                             },
                             "RemovedTags": {
                                 "tagSetSourceFile": "",
                                 "items": []
                             },
-                            "Stats": [
-                                {
-                                    "typeString": "System.Int32",
-                                    "name": "Morale",
-                                    "value": "-2",
-                                    "set": false,
-                                    "valueConstant": null
-                                }
-                            ],
+                            "Stats": [],
                             "Actions": null,
                             "ForceEvents": null,
                             "TemporaryResult": true,
-                            "ResultDuration": 21
+                            "ResultDuration": 300
                         },
                         {
                             "Scope": "Company",
                             "Requirements": null,
                             "AddedTags": {
                                 "tagSetSourceFile": "",
-                                "items": []
+                                "items": [
+                                    "company_argo_loan_short", "company_argo_loan"
+                                ]
                             },
                             "RemovedTags": {
                                 "tagSetSourceFile": "",
@@ -166,16 +149,16 @@
                             "Stats": [
                                 {
                                     "typeString": "System.Int32",
-                                    "name": "MechTechSkill",
-                                    "value": "500",
+                                    "name": "Funds",
+                                    "value": "2500000",
                                     "set": false,
                                     "valueConstant": null
                                 }
                             ],
                             "Actions": null,
                             "ForceEvents": null,
-                            "TemporaryResult": true,
-                            "ResultDuration": 21
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
                         }
                     ]
                 }
@@ -196,66 +179,69 @@
         {
             "Description": {
                 "Id": "outcome_2",
-                "Name": "Tell Yang he can loan one MechWarrior.",
-                "Details": "[{TGT_MW.Callsign}: Technician]",
+                "Name": "Take up a long term loan of 5,000,000 C-Bills with a 15% interest rate.",
+                "Details": " ",
                 "Icon": null
             },
-            "RequirementList": [
-                {
-                    "Scope": "MechWarrior",
-                    "RequirementTags": {
-                        "tagSetSourceFile": "Tags/PilotTags",
-                        "items": [
-                            "pilot_tech"
-                        ]
-                    },
-                    "ExclusionTags": {
-                        "tagSetSourceFile": "",
-                        "items": []
-                    },
-                    "RequirementComparisons": []
-                }
-            ],
+            "RequirementList": [],
             "ResultSets": [
                 {
                     "Description": {
                         "Id": "outcome_2_0",
-                        "Name": "MechWarriorHelp",
-                        "Details": "[[TGT_MW,{TGT_MW.Callsign}]] is happy to help Yang and his crew of MechTechs.\r\n\r\n{TGT_MW.Subj_C} is a capable mechanic, and with {TGT_MW.DET} detailed knowledge of BattleMechs both as a user and their mechanics, {TGT_MW.Subj} will be of great help in the MechBay during the next ten days.",
+                        "Name": "LongTermLoand",
+                        "Details": "Darius nods and makes the necessary arrangement.\r\n\r\nIn two yours, you will need to repay 5,750,000 C-Bills to your creditors.",
                         "Icon": null
                     },
                     "Weight": 100,
                     "Results": [
                         {
-                            "Scope": "MechWarrior",
+                            "Scope": "Company",
                             "Requirements": null,
                             "AddedTags": {
                                 "tagSetSourceFile": "",
-                                "items": []
+                                "items": [
+                                   
+                                    "company_argo_loan_offered"
+                                ]
                             },
                             "RemovedTags": {
                                 "tagSetSourceFile": "",
                                 "items": []
                             },
-                            "Stats": null,
-                            "Actions": [
-                                {
-                                    "Type": "MechWarrior_SetTimeout",
-                                    "value": "9",
-                                    "valueConstant": null,
-                                    "additionalValues": null
-                                }
-                            ],
+                            "Stats": [],
+                            "Actions": null,
                             "ForceEvents": null,
-                            "TemporaryResult": false,
-                            "ResultDuration": 0
+                            "TemporaryResult": true,
+                            "ResultDuration": 720
+                        },
+						{
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "company_argo_loan_Warning",
+                                    
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 660
                         },
                         {
                             "Scope": "Company",
                             "Requirements": null,
                             "AddedTags": {
                                 "tagSetSourceFile": "",
-                                "items": []
+                                "items": [
+                                    "company_argo_loan_long", "company_argo_loan"
+                                ]
                             },
                             "RemovedTags": {
                                 "tagSetSourceFile": "",
@@ -264,16 +250,16 @@
                             "Stats": [
                                 {
                                     "typeString": "System.Int32",
-                                    "name": "MechTechSkill",
-                                    "value": "1500",
+                                    "name": "Funds",
+                                    "value": "5000000",
                                     "set": false,
                                     "valueConstant": null
                                 }
                             ],
                             "Actions": null,
                             "ForceEvents": null,
-                            "TemporaryResult": true,
-                            "ResultDuration": 9
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
                         }
                     ]
                 }
