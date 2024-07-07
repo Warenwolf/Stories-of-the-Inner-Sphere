@@ -2,11 +2,11 @@
     "Description" : {
         "Id" : "event_mod_alcoholism",
         "Name" : "Alcoholism treatment",
-        "Details" : "[[TGT_MW,{TGT_MW.Callsign}]] stumbled through the dimly lit corridors of the Argo, the hum of the ship a constant reminder of battles past. \r\n\r\nThe whiskey bottle, now empty, slipped from {TGT_MW.DET} grasp, clattering to the floor. \r\n\r\n{TGT_MW.SUBJ_C} leaned against the cold steel wall, head throbbing, heart heavier still.\r\n\r\n\r\n\nIn the mech bay, the towering mechs stood silent, their presence a stark contrast to the chaos in {TGT_MW.DET} mind. [[TGT_MW,{TGT_MW.Callsign}]] knew {TGT_MW.Subj} couldn\u2019t keep piloting a BattleMech while drunk. \r\n\r\n\r\n\nBarging in my office, {TGT_MW.Subj} hesitated seeing me wrinkling my nose at the stench eminating from [[TGT_MW,{TGT_MW.Callsign}]]. \r\n\r\n\r\nMy face softened as [[TGT_MW,{TGT_MW.Callsign}]] spoke, {TGT_MW.DET} voice cracking, \"Commander, I can\u2019t keep doing this to myself. To the team.... I need to stop. But\u2026how? What am I supposed to do?\"\n\n\r\n\r\nThe weight of {TGT_MW.DET} question hung in the air, heavy with desperation and hope.",
+        "Details" : "[[TGT_MW,{TGT_MW.Callsign}]] stumbled through the dimly lit corridors of the Argo, the hum of the ship a constant reminder of battles past. \r\n\r\nThe <i>Tyrone Rain</i> whiskey bottle, now empty, slipped from {TGT_MW.DET} grasp, clattering to the floor. \r\n\r\n{TGT_MW.SUBJ_C} leaned against the cold steel wall, head throbbing, heart heavier still.\r\n\r\n\r\n\nIn the mech bay, the towering mechs stood silent, their presence a stark contrast to the chaos in {TGT_MW.DET} mind. [[TGT_MW,{TGT_MW.Callsign}]] knew {TGT_MW.Subj} couldn\u2019t keep piloting a BattleMech while drunk. \r\n\r\n\r\n\nBarging in my office, {TGT_MW.Subj} hesitated seeing me wrinkling my nose at the stench eminating from [[TGT_MW,{TGT_MW.Callsign}]]. \r\n\r\n\r\nMy face softened as [[TGT_MW,{TGT_MW.Callsign}]] spoke, {TGT_MW.DET} voice cracking, \"Commander, I can\u2019t keep doing this to myself. To the team.... I need to stop. But\u2026how? What am I supposed to do?\"\n\n\r\n\r\nThe weight of {TGT_MW.DET} question hung in the air, heavy with desperation and hope.",
         "Icon" : "uixTxrSpot_MedBayPatient"
     },
     "Scope" : "MechWarrior",
-    "Weight" : 9999,
+    "Weight" : 50,
     "Requirements" : {
         "Scope" : "MechWarrior",
         "RequirementTags" : {

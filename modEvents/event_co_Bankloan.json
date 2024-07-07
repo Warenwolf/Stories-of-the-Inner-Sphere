@@ -1,0 +1,289 @@
+{
+    "Description": {
+        "Id": "event_co_Bankloan",
+        "Name": "Running low on Funds",
+        "Details": "The mood in Argo's conference room was tense as we gathered for a meeting about our finances. The treasury was running dangerously low and we needed a solution. I turned to Darius. \"We need to secure funds to get through these lean times. Can we reach out to someone willing to offer us some financing options?\"\r\n\r\n\r\nA few hours later, Darius returned with two proposals. \"Commander, I found two options from a company specializing in financing mercenary companies, based in Greeley. These creditors from Greeley are known for their high-risk financing, catering specifically to mercenary outfits like ours.The first option is a one-year loan of 2.5 million C-Bills with a 30% total interest rate, to be paid back in full at the end of the term. The second option is a two-year loan of 5 million C-Bills with a 15% total interest rate, also to be paid back in full at the end of the term.\"\r\n\r\n\r\nYou had some hard decisions to make, balancing the urgent need for a capital injection versus future financial obligations.",
+        "Icon": "uixTxrSpot_DailyBriefing"
+    },
+    "Scope": "Company",
+    "Weight": 500,
+    "Requirements": {
+        "Scope": "Company",
+        "RequirementTags": {
+            "tagSetSourceFile": "",
+            "items": []
+        },
+        "ExclusionTags": {
+            "tagSetSourceFile": "",
+            "items": [
+                "company_leopard_loan_fair",
+                "company_argo_loan_offered",
+				 "company_argo_loan"
+            ]
+        },
+        "RequirementComparisons": [
+            {
+                "obj": "Funds",
+                "op": "LessThanOrEqual",
+                "val": 500000,
+                "valueConstant": "500000"
+            }
+        ]
+    },
+    "AdditionalRequirements": [],
+    "AdditionalObjects": [],
+    "Options": [
+        {
+            "Description": {
+                "Id": "outcome_0",
+                "Name": "Don't take up a loan.",
+                "Details": "Non-participation option",
+                "Icon": ""
+            },
+            "RequirementList": [],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_0_0",
+                        "Name": "You avoid taking up loans",
+                        "Details": "\"I don't like it\", you say after some thinking.\r\n\r\n\"Let's explore other options before we get into bed with some loan sharks\"",
+                        "Icon": ""
+                    },
+                    "Weight": 100,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "company_argo_loan_offered"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 360
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {}
+        },
+        {
+            "Description": {
+                "Id": "outcome_1",
+                "Name": "Take out a short term loan of 2,500,000 C-Bills with a 30% interest rate.",
+                "Details": " ",
+                "Icon": ""
+            },
+            "RequirementList": [],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_1_0",
+                        "Name": "ShortTermLoan",
+                        "Details": "Darius nods and makes the necessary arrangement.\r\n\r\nIn twelve months, you will need to repay 3,250,000 C-Bills to your creditors.",
+                        "Icon": ""
+                    },
+                    "Weight": 100,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                   
+                                    "company_argo_loan_offered"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 360
+                        },
+						{
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "company_argo_loan_Warning",
+                                    
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 300
+                        },
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "company_argo_loan_short", "company_argo_loan"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Funds",
+                                    "value": "2500000",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "ExclusionTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "RequirementComparisons": []
+            }
+        },
+        {
+            "Description": {
+                "Id": "outcome_2",
+                "Name": "Take up a long term loan of 5,000,000 C-Bills with a 15% interest rate.",
+                "Details": " ",
+                "Icon": null
+            },
+            "RequirementList": [],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_2_0",
+                        "Name": "LongTermLoand",
+                        "Details": "Darius nods and makes the necessary arrangement.\r\n\r\nIn two yours, you will need to repay 5,750,000 C-Bills to your creditors.",
+                        "Icon": null
+                    },
+                    "Weight": 100,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                   
+                                    "company_argo_loan_offered"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 720
+                        },
+						{
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "company_argo_loan_Warning",
+                                    
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 660
+                        },
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": [
+                                    "company_argo_loan_long", "company_argo_loan"
+                                ]
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Funds",
+                                    "value": "5000000",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "ExclusionTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "RequirementComparisons": []
+            }
+        }
+    ],
+    "PublishState": "PUBLISHED",
+    "ValidationState": "UNTESTED",
+    "EventType": "NORMAL",
+    "OneTimeEvent": false,
+    "Tags": {
+        "tagSetSourceFile": "tags/EventTags",
+        "items": []
+    }
+}

@@ -1,0 +1,303 @@
+{
+    "Description": {
+        "Id": "event_co_mechbayNeedsHelp",
+        "Name": "All hands on deck",
+        "Details": "Yang arrives to your office with a request. \"Boss, we’re overwhelmed with 'Mech repairs. Can we pull resources from other departments? Alternatively, it would be great if you could assign some MechWarriors with technical skills to help out. Their firsthand experience with operating the 'Mechs gives them insights into the mechanical issues we’re facing, making them well-suited for providing effective support and speeding up the repair process.\"",
+        "Icon": "uixTxrSpot_MechBay"
+    },
+    "Scope": "MechWarrior",
+    "Weight": 300,
+    "Requirements": {
+        "Scope": "MechWarrior",
+        "RequirementTags": {
+            "tagSetSourceFile": "",
+            "items": [
+                "pilot_tech"
+            ]
+        },
+        "ExclusionTags": {
+            "tagSetSourceFile": "",
+            "items": []
+        },
+        "RequirementComparisons": [
+            {
+                "obj": "Injuries",
+                "op": "Equal",
+                "val": 0,
+                "valueConstant": "0"
+            }
+        ]
+    },
+    "AdditionalRequirements": [
+        {
+            "Scope": "Company",
+            "RequirementTags": {
+                "tagSetSourceFile": "",
+                "items": []
+            },
+            "ExclusionTags": {
+                "tagSetSourceFile": "",
+                "items": []
+            },
+            "RequirementComparisons": [
+                {
+                    "obj": "TaskDuration",
+                    "op": "GreaterThan",
+                    "val": 15,
+                    "valueConstant": "15"
+                }
+            ]
+        }
+    ],
+    "AdditionalObjects": [],
+    "Options": [
+        {
+            "Description": {
+                "Id": "outcome_0",
+                "Name": "Make do with what you have, Yang",
+                "Details": "Non-participation option",
+                "Icon": ""
+            },
+            "RequirementList": [],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_0_0",
+                        "Name": "Nothing happens",
+                        "Details": "Yang nods and returns to the chaos of the Mech Bay.",
+                        "Icon": ""
+                    },
+                    "Weight": 100,
+                    "Results": []
+                }
+            ],
+            "Requirements": {}
+        },
+        {
+            "Description": {
+                "Id": "outcome_1",
+                "Name": "Tell Yang he can loan people from other departments",
+                "Details": " ",
+                "Icon": ""
+            },
+            "RequirementList": [],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_1_0",
+                        "Name": "techs for 3 weeks",
+                        "Details": "Yang makes the necessary arrangements and a number of people from other departments help his MechTechs.\r\n\r\n I is not much but every bit helps.",
+                        "Icon": ""
+                    },
+                    "Weight": 75,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "MechTechSkill",
+                                    "value": "500",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 21
+                        }
+                    ]
+                },
+                {
+                    "Description": {
+                        "Id": "outcome_1_1",
+                        "Name": "techs for 3 weeks",
+                        "Details": "Yang makes the necessary arrangements and a number of people from other departments help his MechTechs.\r\n\r\n I is not much but every bit helps.\r\n\r\nHowever people dislike being taken away from they usual tasks",
+                        "Icon": ""
+                    },
+                    "Weight": 25,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Morale",
+                                    "value": "-2",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 21
+                        },
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "MechTechSkill",
+                                    "value": "500",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 21
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "ExclusionTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "RequirementComparisons": []
+            }
+        },
+        {
+            "Description": {
+                "Id": "outcome_2",
+                "Name": "Tell Yang he can loan one MechWarrior.",
+                "Details": "[{TGT_MW.Callsign}: Technician]",
+                "Icon": null
+            },
+            "RequirementList": [
+                {
+                    "Scope": "MechWarrior",
+                    "RequirementTags": {
+                        "tagSetSourceFile": "Tags/PilotTags",
+                        "items": [
+                            "pilot_tech"
+                        ]
+                    },
+                    "ExclusionTags": {
+                        "tagSetSourceFile": "",
+                        "items": []
+                    },
+                    "RequirementComparisons": []
+                }
+            ],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_2_0",
+                        "Name": "MechWarriorHelp",
+                        "Details": "[[TGT_MW,{TGT_MW.Callsign}]] is happy to help Yang and his crew of MechTechs.\r\n\r\n{TGT_MW.Subj_C} is a capable mechanic, and with {TGT_MW.DET} detailed knowledge of BattleMechs both as a user and their mechanics, {TGT_MW.Subj} will be of great help in the MechBay during the next ten days.",
+                        "Icon": null
+                    },
+                    "Weight": 100,
+                    "Results": [
+                        {
+                            "Scope": "MechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": null,
+                            "Actions": [
+                                {
+                                    "Type": "MechWarrior_SetTimeout",
+                                    "value": "9",
+                                    "valueConstant": null,
+                                    "additionalValues": null
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        },
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "RemovedTags": {
+                                "tagSetSourceFile": "",
+                                "items": []
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "MechTechSkill",
+                                    "value": "1500",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 9
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "ExclusionTags": {
+                    "tagSetSourceFile": "",
+                    "items": []
+                },
+                "RequirementComparisons": []
+            }
+        }
+    ],
+    "PublishState": "PUBLISHED",
+    "ValidationState": "UNTESTED",
+    "EventType": "NORMAL",
+    "OneTimeEvent": false,
+    "Tags": {
+        "tagSetSourceFile": "tags/EventTags",
+        "items": []
+    }
+}
