@@ -1,0 +1,545 @@
+{
+    "Description": {
+        "Id": "event_mod_MilitaTraining",
+        "Name": "Militia Training",
+        "Details": "During the morning briefing Darius mentions that the local government has offered a militia training contract. \"This can be easy money,\" he says as he scrolls his datapad. \"{TGT_SYSTEM.Name} authorities have sent us a request for MechWarriors to provide tactical training to the local militia. It pays 375,000 C-Bills for six weeks onsite for a MechWarrior with an officer background or 100,000 for a MechWarrior with for a four week tour on-site training.\"\r\n\r\nDarius looks over the current roster. \"If you're interested, we could send an experienced officer like [[TGT_MW,{TGT_MW.Callsign}]].\"\r\n\r\nHe thinks for a bit. \"Or we can see if we have a MechWarrior with attitude problem that may see the light when they are the ones needing to establish routine and discipline in a unit\" He shrugs. \"Your call. What do you think?\"",
+        "Icon": "uixTxrSpot_DailyBriefing"
+    },
+    "Scope": "MechWarrior",
+    "Weight": 15,
+    "Requirements": {
+        "Scope": "MechWarrior",
+        "RequirementTags": {
+            "items": [
+                "pilot_officer"
+            ],
+            "tagSetSourceFile": "Tags/PilotTags"
+        },
+        "ExclusionTags": {
+            "items": [
+                "pilot_criminal",
+                "pilot_rebellious"
+            ],
+            "tagSetSourceFile": "Tags/PilotTags"
+        },
+        "RequirementComparisons": [
+            {
+                "obj": "Injuries",
+                "op": "Equal",
+                "val": 0,
+                "valueConstant": "0"
+            }
+        ]
+    },
+    "AdditionalRequirements": [
+        {
+            "Scope": "Company",
+            "RequirementTags": {
+                "items": [],
+                "tagSetSourceFile": ""
+            },
+            "ExclusionTags": {
+                "items": [],
+                "tagSetSourceFile": ""
+            },
+            "RequirementComparisons": [
+                {
+                    "obj": "Travel",
+                    "op": "Equal",
+                    "val": 0,
+                    "valueConstant": "0"
+                },
+				{
+                            "obj" : "Reputation.Owner",
+                            "op" : "GreaterThanOrEqual",
+                            "val" : 20,
+                            "valueConstant" : "[rep_liked_min]"
+                }
+            ]
+        },
+        {
+            "Scope": "StarSystem",
+            "RequirementTags": {
+                "items": [
+                    "planet_pop_medium"
+                ],
+                "tagSetSourceFile": "Tags/PlanetTags"
+            },
+            "ExclusionTags": {
+                "items": [],
+                "tagSetSourceFile": "Tags/PlanetTags"
+            },
+            "RequirementComparisons": []
+        }
+    ],
+    "AdditionalObjects": [
+        {
+            "Scope": "SecondaryMechWarrior",
+            "Requirements": {
+                "Scope": "SecondaryMechWarrior",
+                "RequirementTags": {
+                    "items": [
+                        "pilot_rebellious"
+                    ],
+                    "tagSetSourceFile": ""
+                },
+                "ExclusionTags": {
+                    "items": [
+                        "pilot_dependable"
+                    ],
+                    "tagSetSourceFile": "Tags/PilotTags"
+                },
+                "RequirementComparisons": [
+                    {
+                        "obj": "Injuries",
+                        "op": "Equal",
+                        "val": 0,
+                        "valueConstant": "0"
+                    }
+                ]
+            }
+        }
+    ],
+    "Options": [
+        {
+            "Description": {
+                "Id": "outcome_0",
+                "Name": "Pass on the opportunity.",
+                "Details": "Non-participation option",
+                "Icon": ""
+            },
+            "RequirementList": [],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_0_0",
+                        "Name": "Nothing happens",
+                        "Details": "You consider the cost of losing a MechWarrior for any amount of time and decide against it.\r\n\r\n\"Darius, let them know we'd like to be considered for a future opportunity, but not right now.\"",
+                        "Icon": ""
+                    },
+                    "Weight": 100,
+                    "Results": []
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "items": [],
+                    "tagSetSourceFile": ""
+                },
+                "ExclusionTags": {
+                    "items": [],
+                    "tagSetSourceFile": ""
+                },
+                "RequirementComparisons": []
+            }
+        },
+        {
+            "Description": {
+                "Id": "outcome_1",
+                "Name": "Send {TGT_MW.Callsign}.",
+                "Details": "[{TGT_MW.Callsign}: Officer]",
+                "Icon": null
+            },
+            "RequirementList": [],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_1_0",
+                        "Name": "XP only",
+                        "Details": "\"Yes, Commander?\" [[TGT_MW,{TGT_MW.Callsign}]] knocks and enters your office.\r\n\r\nYou offer {TGT_MW.OBJ} a seat. \"Locals here in {TGT_SYSTEM.Name} are in need of a seasoned MechWarrior to provide some training and excercise for local milita. Their officers are also looking for some input. I'd like to send you.\"\r\n\r\n{TGT_MW.Callsign} nods. \"I go where you send me, Commander.\"",
+                        "Icon": null
+                    },
+                    "Weight": 75,
+                    "Results": [
+                        {
+                            "Scope": "MechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "RemovedTags": {
+                                "items": [],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "ExperienceUnspent",
+                                    "value": "450",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": [
+                                {
+                                    "Type": "MechWarrior_SetTimeout",
+                                    "value": "42",
+                                    "valueConstant": null,
+                                    "additionalValues": null
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        },
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "RemovedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Funds",
+                                    "value": "375000",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                },
+                {
+                    "Description": {
+                        "Id": "outcome_1_1",
+                        "Name": "XP + high morale",
+                        "Details": "\"Yes, Commander?\" [[TGT_MW,{TGT_MW.Callsign}]] knocks and enters your office.\r\n\r\nYou offer {TGT_MW.OBJ} a seat. \"Locals here in {TGT_SYSTEM.Name} are in need of a seasoned MechWarrior to provide some training and excercise for local milita. Their officers are also looking for some input. I'd like to send you.\"\r\n\r\n{TGT_MW.Callsign} nods, \"I'd be honored, Commander. You can rely on me.\"",
+                        "Icon": ""
+                    },
+                    "Weight": 25,
+                    "Results": [
+                        {
+                            "Scope": "MechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [
+                                    "pilot_morale_high"
+                                ],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "RemovedTags": {
+                                "items": [],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "Stats": null,
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 70
+                        },
+                        {
+                            "Scope": "MechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "RemovedTags": {
+                                "items": [
+                                    "pilot_morale_low"
+                                ],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "ExperienceUnspent",
+                                    "value": "350",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": [
+                                {
+                                    "Type": "MechWarrior_SetTimeout",
+                                    "value": "42",
+                                    "valueConstant": null,
+                                    "additionalValues": null
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        },
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "RemovedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Funds",
+                                    "value": "375000",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "items": [],
+                    "tagSetSourceFile": ""
+                },
+                "ExclusionTags": {
+                    "items": [],
+                    "tagSetSourceFile": ""
+                },
+                "RequirementComparisons": []
+            }
+        },
+        {
+            "Description": {
+                "Id": "outcome_2",
+                "Name": "Send a non-officer MechWarrior.",
+                "Details": " ",
+                "Icon": null
+            },
+            "RequirementList": [
+               
+            ],
+            "ResultSets": [
+                {
+                    "Description": {
+                        "Id": "outcome_2_0",
+                        "Name": "XP + dependable",
+                        "Details": "Later that week, in the daily briefing, Darius delivers an update. \"Seems like [[SCN_MW,{SCN_MW.Callsign}]] is highly regarded by our clients. {SCN_MW.Subj_C} not only helped them train their militia but also suggested better training techniques and tactics. They even threw in some extra C-Bills for the additional help.\"\r\n\r\nYang offers, \"Seems like you made a good call, Boss.\"",
+                        "Icon": null
+                    },
+                    "Weight": 25,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "RemovedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Funds",
+                                    "value": "120000",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        },
+                        {
+                            "Scope": "SecondaryMechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [
+                                    "pilot_dependable"
+                                ],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "RemovedTags": {
+                                "items": ["pilot_rebellious"],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "ExperienceUnspent",
+                                    "value": "300",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": [
+                                {
+                                    "Type": "MechWarrior_SetTimeout",
+                                    "value": "30",
+                                    "valueConstant": null,
+                                    "additionalValues": null
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                },
+                {
+                    "Description": {
+                        "Id": "outcome_2_1",
+                        "Name": "XP only",
+                        "Details": "Later that week, in the daily briefing, Darius gives an update. \"We've received a report from our client. \r\nIt sounds like [[SCN_MW,{SCN_MW.Callsign}]] is performing as expected, staying on-task and fulfilling the obligations set before {SCN_MW.Obj}.\"\r\n\r\nYang comments, \"Seems like you made a good call, Boss. This is good for [[SCN_MW,{SCN_MW.Callsign}]].\"",
+                        "Icon": null
+                    },
+                    "Weight": 50,
+                    "Results": [
+                        {
+                            "Scope": "Company",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "RemovedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "Funds",
+                                    "value": "100000",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        },
+                        {
+                            "Scope": "SecondaryMechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "RemovedTags": {
+                                "items": ["pilot_rebellious"],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "Stats": [
+                                {
+                                    "typeString": "System.Int32",
+                                    "name": "ExperienceUnspent",
+                                    "value": "250",
+                                    "set": false,
+                                    "valueConstant": null
+                                }
+                            ],
+                            "Actions": [
+                                {
+                                    "Type": "MechWarrior_SetTimeout",
+                                    "value": "30",
+                                    "valueConstant": null,
+                                    "additionalValues": null
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                },
+                {
+                    "Description": {
+                        "Id": "outcome_2_2",
+                        "Name": " low morale",
+                        "Details": "Later that week, in the daily briefing, Darius delivers an update. \"I'm just going to read this aloud, so you can appreciate their\u2026 tone. <i>'[[SCN_MW,{SCN_MW.Callsign}]] is extremely unsuitable for leading or guiding soldiers. {SCN_MW.Subj_C} not only insulted our militia volunteers, but has also belittled our officers and political leadership.'</i> And that, by the way, is why they're not paying us.\"\r\n\r\nSumire shrugs. \"Look on the bright side, at least {SCN_MW.Callsign} will be back soon. A few days, tops.\"",
+                        "Icon": null
+                    },
+                    "Weight": 25,
+                    "Results": [
+                        {
+                            "Scope": "SecondaryMechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [
+                                    "pilot_morale_low"
+                                ],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "RemovedTags": {
+                                "items": [],
+                                "tagSetSourceFile": ""
+                            },
+                            "Stats": null,
+                            "Actions": null,
+                            "ForceEvents": null,
+                            "TemporaryResult": true,
+                            "ResultDuration": 30
+                        },
+                        {
+                            "Scope": "SecondaryMechWarrior",
+                            "Requirements": null,
+                            "AddedTags": {
+                                "items": [],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "RemovedTags": {
+                                "items": [
+                                    "pilot_morale_high"
+                                ],
+                                "tagSetSourceFile": "Tags/PilotTags"
+                            },
+                            "Stats": null,
+                            "Actions": [
+                                {
+                                    "Type": "MechWarrior_SetTimeout",
+                                    "value": "3",
+                                    "valueConstant": null,
+                                    "additionalValues": null
+                                }
+                            ],
+                            "ForceEvents": null,
+                            "TemporaryResult": false,
+                            "ResultDuration": 0
+                        }
+                    ]
+                }
+            ],
+            "Requirements": {
+                "Scope": "Company",
+                "RequirementTags": {
+                    "items": [],
+                    "tagSetSourceFile": ""
+                },
+                "ExclusionTags": {
+                    "items": [],
+                    "tagSetSourceFile": ""
+                },
+                "RequirementComparisons": []
+            }
+        }
+    ],
+    "PublishState": "PUBLISHED",
+    "ValidationState": "UNTESTED",
+    "EventType": "NORMAL",
+    "OneTimeEvent": false,
+    "Tags": {
+        "items": [],
+        "tagSetSourceFile": "tags/EventTags"
+    }
+}
